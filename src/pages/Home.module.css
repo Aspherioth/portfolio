@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    color: var(--brand);
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+.fold {
+    padding: 2em;
+    &:nth-child(even) {
+        background-color: hsl(from var(--surface1) h s l);
+    }
+
+    &:nth-child(odd) {
+        background-color: hsl(from var(--surface1) h s calc(l + 3));
+    }
+}

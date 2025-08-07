@@ -1,0 +1,22 @@
+.fold {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    height: 50vh;
+
+    background: var(--surface1);
+
+    padding-block: 2em;
+    border-top: 2px solid var(--surface4);
+
+    h2 {
+        margin-block-start: 0;
+        color: var(--text2);
+    }
+
+    p {
+        margin: 0;
+    }
+}
