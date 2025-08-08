@@ -4,11 +4,9 @@ import PageFold from "../components/PageFold";
 export default function Home() {
   return (
     <main className={styles.content}>
-      <h1 className={styles.title}>Home</h1>
-
       <section>
         <PageFold customClasses={styles.fold}>
-          <h2>Welcome!</h2>
+          <h2 className="h2">Welcome!</h2>
           <p>
             The space is a bit of a mess right now, but make yourself at home!
           </p>
@@ -20,17 +18,17 @@ export default function Home() {
         </PageFold>
 
         <PageFold customClasses={styles.fold}>
-          <h2>Core Skills</h2>
+          <h2 className="h2">Core Skills</h2>
           <p>Under Construction</p>
         </PageFold>
 
         <PageFold customClasses={styles.fold}>
-          <h2>Projects</h2>
+          <h2 className="h2">Projects</h2>
           <p>Under Construction</p>
         </PageFold>
 
         <PageFold customClasses={styles.fold}>
-          <h2>Contact</h2>
+          <h2 className="h2">Contact</h2>
           <p>Under Construction</p>
         </PageFold>
       </section>

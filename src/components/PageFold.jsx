@@ -2,7 +2,7 @@ import styles from "./PageFold.module.css";
 
 function PageFold({ children, customClasses }) {
   return (
-    <section className={`${styles.fold} ${customClasses || ""}`}>
+    <section className={`card ${styles.fold} ${customClasses || ""}`}>
       {children}
     </section>
   );

@@ -1,121 +1,355 @@
-/* Theming example extracted from https://web.dev/patterns/theming/color-schemes */
-* {
-    /* brand foundation */
-    --brand-hue: 17;
-    --brand-saturation: 100%;
-    --brand-lightness: 60%;
+@layer reset, base, components, utilities;
+/*!* Theming example extracted from https://web.dev/patterns/theming/color-schemes *!*/
+/** {*/
+/*    !* brand foundation *!*/
+/*    --brand-hue: 17;*/
+/*    --brand-saturation: 100%;*/
+/*    --brand-lightness: 60%;*/
 
-    /* light */
-    --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
-    --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
-    --text2-light: hsl(var(--brand-hue) 30% 30%);
-    --surface1-light: hsl(var(--brand-hue) 25% 90%);
-    --surface2-light: hsl(var(--brand-hue) 20% 99%);
-    --surface3-light: hsl(var(--brand-hue) 20% 92%);
-    --surface4-light: hsl(var(--brand-hue) 20% 85%);
-    --surface-shadow-light: var(--brand-hue) 10% 20%;
-    --shadow-strength-light: .02;
+/*    !* light *!*/
+/*    --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));*/
+/*    --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);*/
+/*    --text2-light: hsl(var(--brand-hue) 30% 30%);*/
+/*    --surface1-light: hsl(var(--brand-hue) 25% 90%);*/
+/*    --surface2-light: hsl(var(--brand-hue) 20% 99%);*/
+/*    --surface3-light: hsl(var(--brand-hue) 20% 92%);*/
+/*    --surface4-light: hsl(var(--brand-hue) 20% 85%);*/
+/*    --surface-shadow-light: var(--brand-hue) 10% 20%;*/
+/*    --shadow-strength-light: .02;*/
 
-    /* dark */
-    --brand-dark: hsl(
-            var(--brand-hue)
-            calc(var(--brand-saturation) / 2)
-            calc(var(--brand-lightness) / 1.5)
-    );
-    --text1-dark: hsl(var(--brand-hue) 15% 85%);
-    --text2-dark: hsl(var(--brand-hue) 5% 65%);
-    --surface1-dark: hsl(var(--brand-hue) 10% 10%);
-    --surface2-dark: hsl(var(--brand-hue) 10% 15%);
-    --surface3-dark: hsl(var(--brand-hue) 5%  20%);
-    --surface4-dark: hsl(var(--brand-hue) 5% 25%);
-    --surface-shadow-dark: var(--brand-hue) 50% 3%;
-    --shadow-strength-dark: .8;
+/*    !* dark *!*/
+/*    --brand-dark: hsl(*/
+/*            var(--brand-hue)*/
+/*            calc(var(--brand-saturation) / 2)*/
+/*            calc(var(--brand-lightness) / 1.5)*/
+/*    );*/
+/*    --text1-dark: hsl(var(--brand-hue) 15% 85%);*/
+/*    --text2-dark: hsl(var(--brand-hue) 5% 65%);*/
+/*    --surface1-dark: hsl(var(--brand-hue) 10% 10%);*/
+/*    --surface2-dark: hsl(var(--brand-hue) 10% 15%);*/
+/*    --surface3-dark: hsl(var(--brand-hue) 5%  20%);*/
+/*    --surface4-dark: hsl(var(--brand-hue) 5% 25%);*/
+/*    --surface-shadow-dark: var(--brand-hue) 50% 3%;*/
+/*    --shadow-strength-dark: .8;*/
 
-    /* dim */
-    --brand-dim: hsl(
-            var(--brand-hue)
-            calc(var(--brand-saturation) / 1.25)
-            calc(var(--brand-lightness) / 1.25)
-    );
-    --text1-dim: hsl(var(--brand-hue) 15% 75%);
-    --text2-dim: hsl(var(--brand-hue) 10% 61%);
-    --surface1-dim: hsl(var(--brand-hue) 10% 20%);
-    --surface2-dim: hsl(var(--brand-hue) 10% 25%);
-    --surface3-dim: hsl(var(--brand-hue) 5%  30%);
-    --surface4-dim: hsl(var(--brand-hue) 5% 35%);
-    --surface-shadow-dim: var(--brand-hue) 30% 13%;
-    --shadow-strength-dim: .2;
-}
+/*    !* dim *!*/
+/*    --brand-dim: hsl(*/
+/*            var(--brand-hue)*/
+/*            calc(var(--brand-saturation) / 1.25)*/
+/*            calc(var(--brand-lightness) / 1.25)*/
+/*    );*/
+/*    --text1-dim: hsl(var(--brand-hue) 15% 75%);*/
+/*    --text2-dim: hsl(var(--brand-hue) 10% 61%);*/
+/*    --surface1-dim: hsl(var(--brand-hue) 10% 20%);*/
+/*    --surface2-dim: hsl(var(--brand-hue) 10% 25%);*/
+/*    --surface3-dim: hsl(var(--brand-hue) 5%  30%);*/
+/*    --surface4-dim: hsl(var(--brand-hue) 5% 35%);*/
+/*    --surface-shadow-dim: var(--brand-hue) 30% 13%;*/
+/*    --shadow-strength-dim: .2;*/
+/*}*/
+
+/*:root {*/
+/*    !* Common device breakpoints. *!*/
+/*    --bp-sm: 640px;*/
+/*    --bp-md: 768px;*/
+/*    --bp-lg: 1024px;*/
+/*    --bp-xl: 1280px;*/
+/*    --bp-2xl: 1536px;*/
+/*    --bp-3xl: 1920px;*/
+
+/*    color-scheme: light;*/
+
+/*    !* set defaults *!*/
+/*    --brand: var(--brand-light);*/
+/*    --text1: var(--text1-light);*/
+/*    --text2: var(--text2-light);*/
+/*    --surface1: var(--surface1-light);*/
+/*    --surface2: var(--surface2-light);*/
+/*    --surface3: var(--surface3-light);*/
+/*    --surface4: var(--surface4-light);*/
+/*    --surface-shadow: var(--surface-shadow-light);*/
+/*    --shadow-strength: var(--shadow-strength-light);*/
+/*}*/
+
+/*@media (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        color-scheme: dark;*/
+
+/*        --brand: var(--brand-dark);*/
+/*        --text1: var(--text1-dark);*/
+/*        --text2: var(--text2-dark);*/
+/*        --surface1: var(--surface1-dark);*/
+/*        --surface2: var(--surface2-dark);*/
+/*        --surface3: var(--surface3-dark);*/
+/*        --surface4: var(--surface4-dark);*/
+/*        --surface-shadow: var(--surface-shadow-dark);*/
+/*        --shadow-strength: var(--shadow-strength-dark);*/
+/*    }*/
+/*}*/
+
+/*[color-scheme="light"] {*/
+/*    color-scheme: light;*/
+
+/*    --brand: var(--brand-light);*/
+/*    --text1: var(--text1-light);*/
+/*    --text2: var(--text2-light);*/
+/*    --surface1: var(--surface1-light);*/
+/*    --surface2: var(--surface2-light);*/
+/*    --surface3: var(--surface3-light);*/
+/*    --surface4: var(--surface4-light);*/
+/*    --surface-shadow: var(--surface-shadow-light);*/
+/*    --shadow-strength: var(--shadow-strength-light);*/
+/*}*/
+
+/*[color-scheme="dark"] {*/
+/*    color-scheme: dark;*/
+
+/*    --brand: var(--brand-dark);*/
+/*    --text1: var(--text1-dark);*/
+/*    --text2: var(--text2-dark);*/
+/*    --surface1: var(--surface1-dark);*/
+/*    --surface2: var(--surface2-dark);*/
+/*    --surface3: var(--surface3-dark);*/
+/*    --surface4: var(--surface4-dark);*/
+/*    --surface-shadow: var(--surface-shadow-dark);*/
+/*    --shadow-strength: var(--shadow-strength-dark);*/
+/*}*/
+
+/*[color-scheme="dim"] {*/
+/*    color-scheme: dark;*/
+
+/*    --brand: var(--brand-dim);*/
+/*    --text1: var(--text1-dim);*/
+/*    --text2: var(--text2-dim);*/
+/*    --surface1: var(--surface1-dim);*/
+/*    --surface2: var(--surface2-dim);*/
+/*    --surface3: var(--surface3-dim);*/
+/*    --surface4: var(--surface4-dim);*/
+/*    --surface-shadow: var(--surface-shadow-dim);*/
+/*    --shadow-strength: var(--shadow-strength-dim);*/
+/*}*/
+
+/* Wizard of Pages — AAA-oriented design tokens via CSS variables */
+/* Light is default; add .theme-dark on a container to force dark. */
 
 :root {
-    color-scheme: light;
+    /* Surfaces */
+    --bg: #F7F5FF;
+    --card: #FFFFFF;
+    --border: #E6E2F5;
 
-    /* set defaults */
-    --brand: var(--brand-light);
-    --text1: var(--text1-light);
-    --text2: var(--text2-light);
-    --surface1: var(--surface1-light);
-    --surface2: var(--surface2-light);
-    --surface3: var(--surface3-light);
-    --surface4: var(--surface4-light);
-    --surface-shadow: var(--surface-shadow-light);
-    --shadow-strength: var(--shadow-strength-light);
+    /* Text */
+    --text-primary: #1A102A; /* AAA on bg/card */
+    --text-secondary: #2A1E45;
+    --text-muted: #5A4A75;
+
+    /* Brand / accents */
+    --primary: #5020A3; /* white text is AAA */
+    --secondary: #FF8A3C; /* black text is AAA */
+    --teal: #10B9BA; /* black text is AAA */
+    --gold: #A67800;
+
+    /* Feedback (pastels for AAA with dark text) */
+    --success: #DFF5E1;
+    --warning: #FFF4CC;
+    --error: #FDD6D6;
+    --info: #D6F0FF;
+
+    /* On‑color helpers (explicit to avoid guessing in JS) */
+    --on-primary: #FFFFFF;
+    --on-secondary: #000000;
+    --on-teal: #000000;
+
+    /* Effects */
+    --shadow-card: 0 8px 20px rgba(17, 0, 51, 0.07);
+    --glow-primary: 0 0 10px rgba(80, 32, 163, 0.35);
+    --glow-secondary: 0 0 10px rgba(255, 138, 60, 0.35);
+
+    /* Typography */
+    --font-base: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --font-heading: "Cinzel Decorative", Georgia, serif;
+    --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-special: "Great Vibes", "Brush Script MT", cursive;
+}
+
+/* Dark theme overrides */
+.theme-dark {
+    --bg: #222222;
+    --card: #2A2A2A;
+    --border: #3A3A3A;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #EDEDED;
+    --text-muted: #C9C9C9;
+
+    --primary: #5A1F9E; /* white AAA */
+    --secondary: #8A3C00; /* white AAA */
+    --teal: #006B6B; /* white AAA */
+    --gold: #E0AF2F;
+
+    /* Alerts: neutral surface + colored bar handled in markup */
+    --success: #2E7D32; /* used for bar only */
+    --warning: #B28900;
+    --error: #B71C1C;
+    --info: #0277BD;
+
+    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.35);
+    --glow-primary: 0 0 16px rgba(90, 31, 158, 0.55);
+    --glow-secondary: 0 0 16px rgba(138, 60, 0, 0.55);
+}
+
+/* Respect system preference if you apply .theme-auto */
+.theme-auto {
+    color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-
-        --brand: var(--brand-dark);
-        --text1: var(--text1-dark);
-        --text2: var(--text2-dark);
-        --surface1: var(--surface1-dark);
-        --surface2: var(--surface2-dark);
-        --surface3: var(--surface3-dark);
-        --surface4: var(--surface4-dark);
-        --surface-shadow: var(--surface-shadow-dark);
-        --shadow-strength: var(--shadow-strength-dark);
+    .theme-auto:not(.theme-dark):not(.theme-light) {
+        /* opt-in: if you add theme-auto without explicit theme, dark kicks in */
+        --bg: #222222;
+        --card: #2A2A2A;
+        --border: #3A3A3A;
+        --text-primary: #FFFFFF;
+        --text-secondary: #EDEDED;
+        --text-muted: #C9C9C9;
+        --primary: #5A1F9E;
+        --secondary: #8A3C00;
+        --teal: #006B6B;
+        --gold: #E0AF2F;
+        --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.35);
+        --glow-primary: 0 0 16px rgba(90, 31, 158, 0.55);
+        --glow-secondary: 0 0 16px rgba(138, 60, 0, 0.55);
     }
 }
 
-[color-scheme="light"] {
-    color-scheme: light;
+@layer base {
+    /* Minimal primitives */
+    .wop {
+        background-image: linear-gradient(to bottom right, rgba(from var(--bg) r g b / 100%), rgba(from var(--bg) r g b / 98%)) ;
+        color: var(--text-primary);
+        font-family: var(--font-base);
+    }
 
-    --brand: var(--brand-light);
-    --text1: var(--text1-light);
-    --text2: var(--text2-light);
-    --surface1: var(--surface1-light);
-    --surface2: var(--surface2-light);
-    --surface3: var(--surface3-light);
-    --surface4: var(--surface4-light);
-    --surface-shadow: var(--surface-shadow-light);
-    --shadow-strength: var(--shadow-strength-light);
-}
+    .wop .container {
+        max-width: 72rem;
+        margin-inline: auto;
+        padding: 1rem;
+    }
 
-[color-scheme="dark"] {
-    color-scheme: dark;
+    .wop .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        box-shadow: var(--shadow-card);
+    }
 
-    --brand: var(--brand-dark);
-    --text1: var(--text1-dark);
-    --text2: var(--text2-dark);
-    --surface1: var(--surface1-dark);
-    --surface2: var(--surface2-dark);
-    --surface3: var(--surface3-dark);
-    --surface4: var(--surface4-dark);
-    --surface-shadow: var(--surface-shadow-dark);
-    --shadow-strength: var(--shadow-strength-dark);
-}
+    .wop .bordered {
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+    }
 
-[color-scheme="dim"] {
-    color-scheme: dark;
+    /* Buttons */
+    .btn {
+        display: inline-flex;
+        gap: .5rem;
+        align-items: center;
+        border-radius: .75rem;
+        padding: .5rem 1rem;
+        font-weight: 600;
+        font-size: .875rem;
+        border: 0;
+        cursor: pointer;
+    }
 
-    --brand: var(--brand-dim);
-    --text1: var(--text1-dim);
-    --text2: var(--text2-dim);
-    --surface1: var(--surface1-dim);
-    --surface2: var(--surface2-dim);
-    --surface3: var(--surface3-dim);
-    --surface4: var(--surface4-dim);
-    --surface-shadow: var(--surface-shadow-dim);
-    --shadow-strength: var(--shadow-strength-dim);
+    .btn-primary {
+        background: var(--primary);
+        color: var(--on-primary);
+        box-shadow: var(--glow-primary);
+    }
+
+    .btn-secondary {
+        background: var(--secondary);
+        color: var(--on-secondary);
+        box-shadow: var(--glow-secondary);
+    }
+
+    .btn-teal {
+        background: var(--teal);
+        color: var(--on-teal);
+    }
+
+    .btn-ghost {
+        background: var(--card);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+    }
+
+    /* Alerts */
+    .alert {
+        display: flex;
+        align-items: flex-start;
+        gap: .5rem;
+        padding: .75rem;
+        border-radius: .5rem;
+        border: 1px solid var(--border);
+        background: var(--card);
+    }
+
+    .alert .bar {
+        width: .375rem;
+        height: 1.25rem;
+        border-radius: .25rem;
+        margin-right: .25rem;
+    }
+
+    .alert.success .bar {
+        background: var(--success);
+    }
+
+    .alert.warning .bar {
+        background: var(--warning);
+    }
+
+    .alert.error .bar {
+        background: var(--error);
+    }
+
+    .alert.info .bar {
+        background: var(--info);
+    }
+
+    /* Headings */
+    .h1, .h2, .h3 {
+        font-family: var(--font-heading);
+        margin: 0;
+    }
+
+    .h1 {
+        font-size: clamp(2.25rem, 3vw, 3rem);
+        font-weight: 800;
+    }
+
+    .h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    .h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .code {
+        font-family: var(--font-mono);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: .5rem;
+        padding: .75rem;
+        font-size: .8rem;
+    }
+
+    .signature {
+        font-family: var(--font-special);
+        color: var(--gold);
+    }
 }

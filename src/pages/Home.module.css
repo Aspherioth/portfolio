@@ -6,7 +6,7 @@
 }
 
 .title {
-    color: var(--brand);
+    color: var(--primary);
     font-size: 3.2em;
     line-height: 1.1;
 }
@@ -14,10 +14,20 @@
 .fold {
     padding: 2em;
     &:nth-child(even) {
-        background-color: hsl(from var(--surface1) h s l);
+        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l - 0.01) c h), oklch(from var(--card) calc(l - 0.015) c h));
     }
 
     &:nth-child(odd) {
-        background-color: hsl(from var(--surface1) h s calc(l + 3));
+        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l - 0.03) c h), oklch(from var(--card) calc(l - 0.035) c h));
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    &:nth-child(even) {
+        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l + 0.01) c h), oklch(from var(--card) calc(l + 0.015) c h));
+    }
+
+    &:nth-child(odd) {
+        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l + 0.03) c h), oklch(from var(--card) calc(l + 0.035) c h));
     }
 }
