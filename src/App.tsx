@@ -12,7 +12,7 @@ function App(): React.ReactElement {
   return (
     <ChakraProvider value={theme}>
       <ColorModeProvider>
-        <Box bg='bg' pt='10px'>
+        <Box bg='bg' pt='10px' minW='sm'>
           {/*<div className='wop theme-auto'>*/}
           <Navigation />
           <Outlet />
