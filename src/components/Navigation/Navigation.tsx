@@ -13,13 +13,14 @@ export default function Navigation(): React.ReactElement {
       as='nav'
       backdropFilter='blur(12px)'
       bg='bg.nav/30'
-      margin='0 25px 10px 25px'
       borderBottomWidth='2px'
       borderColor='bg.nav/30'
       borderRadius='35px'
       py={4}
-      position='sticky'
-      top='10px'
+      position='fixed'
+      top={{ base: '25px', mdDown: '15px' }}
+      left={{ base: '30px', mdDown: '20px' }}
+      right={{ base: '30px', mdDown: '20px' }}
       min-height='70px'
       zIndex={10}
     >
@@ -53,20 +54,19 @@ export default function Navigation(): React.ReactElement {
               <Collapsible.Trigger asChild>
                 <IconButton colorPalette='teal' color='text.primary' variant='ghost' aspectRatio={1} borderRadius='70px'>
                   {isOpen ? <IoClose /> : <IoMenu />}
-
                 </IconButton>
               </Collapsible.Trigger>
             </HStack>
 
             <Collapsible.Content>
               <VStack gap={4} alignItems='end'>
-                <NavLink to='/portfolio' end>
+                <NavLink to='/portfolio' end onClick={() => setIsOpen(false)}>
                   <Text color='text.primary' fontWeight='bold'>Home</Text>
                 </NavLink>
-                <NavLink to='/portfolio/games' end>
+                <NavLink to='/portfolio/games' end onClick={() => setIsOpen(false)}>
                   <Text color='text.primary' fontWeight='bold'>Games</Text>
                 </NavLink>
-                <NavLink to='/portfolio/theme' end>
+                <NavLink to='/portfolio/theme' end onClick={() => setIsOpen(false)}>
                   <Text color='text.primary' fontWeight='bold'>Theme Preview</Text>
                 </NavLink>
               </VStack>

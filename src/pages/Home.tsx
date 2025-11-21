@@ -6,9 +6,7 @@ import styles from './Home.module.css'
 // className={styles.content}
 export default function Home(): React.ReactElement {
   return (
-    <Box as='main'
-      scrollSnapType='block mandatory'
-    >
+    <Box as='main'>
       <PageFold customClasses={styles.fold}>
         <h2 className='h2'>Welcome!</h2>
         <p>
