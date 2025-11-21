@@ -2,19 +2,23 @@
 
 :root {
     /* Surfaces */
-    --bg: oklch(98% 0.01 270);
+    /*--bg: oklch(98% 0.01 270);*/
     --card: oklch(100% 0 0);
     --border: oklch(91.2% 0.027 298);
 
     /* Text */
-    --text-primary: oklch(16.5% 0.052 298); /* AAA on bg/card */
+    --text-primary: oklch(16.5% 0.052 298);
+    /* AAA on bg/card */
     --text-secondary: oklch(24.2% 0.078 298);
     --text-muted: oklch(42.8% 0.067 298);
 
     /* Brand / accents */
-    --primary: oklch(35.6% 0.165 298); /* white text is AAA */
-    --secondary: oklch(69.8% 0.137 50); /* black text is AAA */
-    --teal: oklch(70.2% 0.123 180); /* black text is AAA */
+    --primary: oklch(35.6% 0.165 298);
+    /* white text is AAA */
+    --secondary: oklch(69.8% 0.137 50);
+    /* black text is AAA */
+    --teal: oklch(70.2% 0.123 180);
+    /* black text is AAA */
     --gold: oklch(57.4% 0.12 85);
 
     /* Feedback (pastels for AAA with dark text) */
@@ -50,13 +54,17 @@
     --text-secondary: oklch(94.1% 0 0);
     --text-muted: oklch(80.8% 0 0);
 
-    --primary: oklch(38.2% 0.162 298); /* white AAA */
-    --secondary: oklch(37.5% 0.12 50); /* white AAA */
-    --teal: oklch(42.8% 0.086 180); /* white AAA */
+    --primary: oklch(38.2% 0.162 298);
+    /* white AAA */
+    --secondary: oklch(37.5% 0.12 50);
+    /* white AAA */
+    --teal: oklch(42.8% 0.086 180);
+    /* white AAA */
     --gold: oklch(78.5% 0.125 85);
 
     /* Alerts: neutral surface + colored bar handled in markup */
-    --success: oklch(52.8% 0.12 142); /* used for bar only */
+    --success: oklch(52.8% 0.12 142);
+    /* used for bar only */
     --warning: oklch(61.2% 0.118 85);
     --error: oklch(42.5% 0.18 15);
     --info: oklch(54.8% 0.145 230);
@@ -91,9 +99,10 @@
 }
 
 @layer base {
+
     /* Minimal primitives */
     .wop {
-        background-image: linear-gradient(to bottom right, rgba(from var(--bg) r g b / 100%), rgba(from var(--bg) r g b / 98%)) ;
+        /*background-image: linear-gradient(to bottom right, rgba(from var(--bg) r g b / 100%), rgba(from var(--bg) r g b / 98%)) ;*/
         color: var(--text-primary);
         font-family: var(--font-base);
     }
@@ -187,7 +196,9 @@
     }
 
     /* Headings */
-    .h1, .h2, .h3 {
+    .h1,
+    .h2,
+    .h3 {
         font-family: var(--font-heading);
         margin: 0;
     }
@@ -222,4 +233,6 @@
     }
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}

@@ -11,19 +11,6 @@
     line-height: 1.1;
 }
 
-.fold {
-    padding: 2em;
-
-    padding-inline: 5vw;
-    &:nth-child(even) {
-        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l - 0.01) c h), oklch(from var(--card) calc(l - 0.015) c h));
-    }
-
-    &:nth-child(odd) {
-        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l - 0.03) c h), oklch(from var(--card) calc(l - 0.035) c h));
-    }
-}
-
 @media (min-width: 640px) {
     .fold {
         padding-inline: 10vw;
@@ -33,15 +20,5 @@
 @media (min-width: 1240px) {
     .fold {
         padding-inline: 15vw;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    &:nth-child(even) {
-        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l + 0.01) c h), oklch(from var(--card) calc(l + 0.015) c h));
-    }
-
-    &:nth-child(odd) {
-        background: linear-gradient(to bottom right, oklch(from var(--card) calc(l + 0.03) c h), oklch(from var(--card) calc(l + 0.035) c h));
     }
 }

@@ -1,0 +1,15 @@
+.navigation {
+    position: sticky;
+    top: 0;
+    height: 6vh;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    padding-inline: 1rem;
+
+    background-color: oklch(from var(--teal) l c h / 0.2);
+    backdrop-filter: blur(6px);
+}
