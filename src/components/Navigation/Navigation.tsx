@@ -43,9 +43,10 @@ export default function Navigation(): React.ReactElement {
             <NavLink to='/portfolio/games' end>
               <Text color='text.primary' fontWeight='bold'>Games</Text>
             </NavLink>
-            <NavLink to='/portfolio/theme' end>
+            {/* !!!Theme will be added back when the page gets converted to Chakra UI!!! */}
+            {/*<NavLink to='/portfolio/theme' end>
               <Text color='text.primary' fontWeight='bold'>Theme Preview</Text>
-            </NavLink>
+            </NavLink>*/}
           </HStack>
 
           <VStack gap={4} hideFrom='md' alignItems='end'>
@@ -66,9 +67,10 @@ export default function Navigation(): React.ReactElement {
                 <NavLink to='/portfolio/games' end onClick={() => setIsOpen(false)}>
                   <Text color='text.primary' fontWeight='bold'>Games</Text>
                 </NavLink>
-                <NavLink to='/portfolio/theme' end onClick={() => setIsOpen(false)}>
+                {/* !!!Theme will be added back when the page gets converted to Chakra UI!!! */}
+                {/*<NavLink to='/portfolio/theme' end onClick={() => setIsOpen(false)}>
                   <Text color='text.primary' fontWeight='bold'>Theme Preview</Text>
-                </NavLink>
+                </NavLink>*/}
               </VStack>
             </Collapsible.Content>
 
