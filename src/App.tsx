@@ -1,4 +1,4 @@
-import { Box, ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
 import { Outlet } from 'react-router'
 
 import './App.css'
@@ -12,13 +12,22 @@ function App(): React.ReactElement {
   return (
     <ChakraProvider value={theme}>
       <ColorModeProvider>
-        <Box bg='bg' minW='sm' pt={{ base: '115px', mdDown: '105px' }}>
+        <Flex
+          direction='column'
+          bg='bg'
+          w='100%'
+          h='100%'
+          minW='sm'
+          minH='100vh'
+          pb='2rem'
+          justifyContent='space-between'
+        >
           {/*<div className='wop theme-auto'>*/}
           <Navigation />
           <Outlet />
           <Footer />
           {/*</div>*/}
-        </Box>
+        </Flex>
       </ColorModeProvider>
     </ChakraProvider>
   )

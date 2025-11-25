@@ -4,6 +4,9 @@ const customConfig = defineConfig({
   theme: {
     tokens: {
       fonts: {
+        card: {
+          header: { value: '-apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif' },
+        },
         heading: { value: '\'Cinzel Decorative\', Georgia, serif' },
         body: {
           value: 'Inter, system-ui, -apple-system, \'Segoe UI\', Roboto, sans-serif',
@@ -30,10 +33,18 @@ const customConfig = defineConfig({
             light: { value: 'oklch(57.4% 0.12 85)' },
             dark: { value: 'oklch(78.5% 0.125 85)' },
           },
+          glass: {
+            light: { value: 'oklch(100 0 90 / 0.1)' },
+            dark: { value: 'oklch(100 0 90 / 0.1)' },
+          },
         },
         bg: {
           light: { value: 'oklch(98% 0.01 270)' },
-          dark: { value: 'oklch(21.2% 0 0)' },
+          dark: { value: 'oklch(30% 0.1 100)' },
+        },
+        surface: {
+          light: { value: 'oklch(90% 0 0)' },
+          dark: { value: 'oklch(25% 0 0)' },
         },
         card: {
           normal: {
@@ -51,8 +62,8 @@ const customConfig = defineConfig({
         },
         text: {
           primary: {
-            light: { value: 'oklch(20% 0 0)' },
-            dark: { value: 'oklch(90% 0 0)' },
+            light: { value: 'oklch(25% 0 0)' },
+            dark: { value: 'oklch(85% 0 0)' },
           },
           secondary: {
             light: { value: 'oklch(24.2% 0.078 298)' },
@@ -83,6 +94,14 @@ const customConfig = defineConfig({
         },
       },
       shadows: {
+        // section: {
+        //   light: { value: '0 10px 35px rgba(0, 0, 0, 0.07)' },
+        //   dark: { value: '0 12px 35px rgba(0, 0, 0, 0.35)' },
+        // },
+        section: {
+          light: { value: '0 10px 35px rgba(0, 0, 0, 0.07)' },
+          dark: { value: '0 10px 35px rgba(0, 0, 0, 0.35)' },
+        },
         card: {
           light: { value: '0 8px 20px rgba(0, 0, 0, 0.07)' },
           dark: { value: '0 10px 25px rgba(0, 0, 0, 0.35)' },
@@ -103,10 +122,16 @@ const customConfig = defineConfig({
       colors: {
         bg: {
           DEFAULT: {
-            value: { base: '{colors.bg.light}', _dark: '{colors.bg.dark}' },
+            value: {
+              _light: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              _dark: 'linear-gradient(135deg, #0f172a 0%, #312e81 100%)',
+            },
+          },
+          surface: {
+            value: { base: '{colors.surface.light}', _dark: '{colors.surface.dark}' },
           },
           nav: {
-            value: { base: '{colors.brand.teal.light}', _dark: '{colors.brand.teal.dark}' },
+            value: { base: '{colors.brand.glass.light}', _dark: '{colors.brand.glass.dark}' },
           },
         },
         card: {
@@ -118,9 +143,17 @@ const customConfig = defineConfig({
           },
         },
         border: {
-          value: {
-            base: '{colors.border.light}',
-            _dark: '{colors.border.dark}',
+          DEFAULT: {
+            value: {
+              base: '{colors.border.light}',
+              _dark: '{colors.border.dark}',
+            },
+          },
+          teal: {
+            value: {
+              base: '{colors.brand.teal.light}',
+              _dark: '{colors.brand.teal.dark}',
+            },
           },
         },
         text: {
@@ -141,6 +174,14 @@ const customConfig = defineConfig({
               base: '{colors.text.muted.light}',
               _dark: '{colors.text.muted.dark}',
             },
+          },
+        },
+      },
+      shadows: {
+        section: {
+          value: {
+            base: '{shadows.section.light}',
+            _dark: '{shadows.section.dark}',
           },
         },
       },

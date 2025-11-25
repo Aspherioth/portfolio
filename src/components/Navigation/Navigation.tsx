@@ -17,12 +17,12 @@ export default function Navigation(): React.ReactElement {
       borderColor='bg.nav/30'
       borderRadius='35px'
       py={4}
-      position='fixed'
-      top={{ base: '25px', mdDown: '15px' }}
-      left={{ base: '30px', mdDown: '20px' }}
-      right={{ base: '30px', mdDown: '20px' }}
+      position='sticky'
+      top={{ smDown: '15px', md: '25px' }}
+      m='0 auto'
+      w='90vw'
       min-height='70px'
-      zIndex={10}
+      zIndex={100}
     >
       <Container maxW='container.xl'>
         <Flex justify='space-between' align='center'>
@@ -32,7 +32,7 @@ export default function Navigation(): React.ReactElement {
             font='{fonts.heading}'
             fontWeight='bold'
           >
-            Wizard of Pages
+            Juan Macedo
           </Heading>
 
           <HStack gap={4} hideBelow='md'>
