@@ -1,5 +1,6 @@
 import js from '@eslint/js'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import type { Linter } from 'eslint'
 import pluginImport from 'eslint-plugin-import'
 import pluginReact from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -8,7 +9,8 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 // Shared formatting and React rules
-const commonRules = {
+const commonRules: Linter.RulesRecord = {
+  indent: ['error', 2],
   semi: ['error', 'never'],
   quotes: ['error', 'single'],
   'jsx-quotes': ['error', 'prefer-single'],
@@ -26,7 +28,7 @@ const commonRules = {
 }
 
 // Import ordering and spacing
-const importRules = {
+const importRules: Linter.RulesRecord = {
   'import/order': [
     'error',
     {
@@ -49,7 +51,7 @@ const importRules = {
 }
 
 // Optional React naming conventions
-const reactNamingRules = {
+const reactNamingRules: Linter.RulesRecord = {
   'react/jsx-pascal-case': ['error', { allowAllCaps: true }],
 }
 
@@ -109,6 +111,9 @@ export default defineConfig([
       ...commonRules,
       ...importRules,
       ...reactNamingRules,
+
+      indent: 'off',
+      "@typescript-eslint/indent": ["error", 2],
 
       '@typescript-eslint/no-unused-vars': [
         'error',

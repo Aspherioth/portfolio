@@ -1,25 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { Route, BrowserRouter as Router, Routes } from 'react-router'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-import './index.css'
-import './theme.css'
+import "./index.css";
+import "./theme.css";
+import "@fontsource/instrument-serif";
+import "@fontsource-variable/jetbrains-mono/wght.css";
 
-import App from '@/App.js'
-import Games from '@/pages/Games'
-import Home from '@/pages/Home'
-import ThemePreview from '@/pages/ThemePreview.js'
+import App from "@/App.js";
 
-createRoot(document.getElementById('root') as HTMLElement).render(
+createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
-    <Router>
-      <Routes>
-        <Route path='portfolio' element={<App />}>
-          <Route index element={<Home />} />
-          <Route path='games' element={<Games />} />
-          <Route path='theme' element={<ThemePreview />} />
-        </Route>
-      </Routes>
-    </Router>
+    <App />
   </StrictMode>,
-)
+);
