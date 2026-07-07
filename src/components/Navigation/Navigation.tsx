@@ -22,16 +22,15 @@ export default function Navigation(): React.ReactElement {
       open={isOpen}
       onOpenChange={(e) => setIsOpen(e.open)}
       as="header"
-      backdropFilter="blur(12px)"
-      bg="bg.nav/30"
-      borderBottomWidth="2px"
-      borderColor="bg.nav/30"
-      borderRadius="35px"
+      backdropFilter="saturate(140%) blur(12px)"
+      bg="bg.nav"
+      borderBottomWidth="1px"
+      borderBottomColor="border"
+      px="10px"
       py={4}
       position="sticky"
-      top={{ smDown: "15px", md: "25px" }}
-      m="0 auto"
-      w="90vw"
+      top="0"
+      w="100%"
       min-height="70px"
       zIndex={100}
     >
@@ -41,14 +40,23 @@ export default function Navigation(): React.ReactElement {
             <Heading
               as="h1"
               color="text.primary"
+              letterSpacing="0.2px"
+              lineHeight="1"
               fontFamily="heading"
-              fontSize="xl"
+              fontSize="1.5xl"
               fontWeight="bold"
               size="sm"
             >
               Juan Macedo
             </Heading>
-            <Text as="span" fontSize="sm" fontFamily="mono">
+            <Text
+              as="span"
+              color="text.muted"
+              fontSize="2xs"
+              fontFamily="mono"
+              letterSpacing="2px"
+              textTransform="uppercase"
+            >
               Software Engineer
             </Text>
           </Stack>

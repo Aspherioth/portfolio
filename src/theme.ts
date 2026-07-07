@@ -19,6 +19,9 @@ const customConfig = defineConfig({
           value: '"JetBrains Mono Variable", monospace',
         },
       },
+      fontSizes: {
+        "1.5xl": { value: "1.375rem" },
+      },
       colors: {
         brand: {
           primary: {
@@ -43,8 +46,16 @@ const customConfig = defineConfig({
           },
         },
         bg: {
-          light: { value: "oklch(98% 0.01 270)" },
-          dark: { value: "oklch(30% 0.1 100)" },
+          light: { value: "#F4F6FB" },
+          dark: { value: "#161821" },
+          nav: {
+            light: {
+              value: "color-mix(in srgb, {colors.bg.light} 78%, transparent)",
+            },
+            dark: {
+              value: "color-mix(in srgb, {colors.bg.dark} 78%, transparent)",
+            },
+          },
         },
         surface: {
           light: { value: "oklch(90% 0 0)" },
@@ -61,21 +72,27 @@ const customConfig = defineConfig({
           },
         },
         border: {
-          light: { value: "oklch(91.2% 0.027 298)" },
-          dark: { value: "oklch(35.3% 0 0)" },
+          // light: { value: "oklch(91.2% 0.027 298)" },
+          light: { value: "#E2E6F1" },
+          // dark: { value: "oklch(35.3% 0 0)" },
+          dark: { value: "#2F3343" },
         },
         text: {
           primary: {
-            light: { value: "oklch(25% 0 0)" },
-            dark: { value: "oklch(85% 0 0)" },
+            // light: { value: "oklch(25% 0 0)" },
+            light: { value: "#2C3142" },
+            // dark: { value: "oklch(85% 0 0)" },
+            dark: { value: "#E7E9F2" },
           },
           secondary: {
             light: { value: "oklch(24.2% 0.078 298)" },
             dark: { value: "oklch(94.1% 0 0)" },
           },
           muted: {
-            light: { value: "oklch(42.8% 0.067 298)" },
-            dark: { value: "oklch(80.8% 0 0)" },
+            // light: { value: "oklch(42.8% 0.067 298)" },
+            light: { value: "#6B7287" },
+            // dark: { value: "oklch(80.8% 0 0)" },
+            dark: { value: "#9AA0B6" },
           },
         },
         feedback: {
@@ -127,8 +144,10 @@ const customConfig = defineConfig({
         bg: {
           DEFAULT: {
             value: {
-              _light: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              _dark: "linear-gradient(135deg, #0f172a 0%, #312e81 100%)",
+              // _light: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              _light: "{colors.bg.light}",
+              // _dark: "linear-gradient(135deg, #0f172a 0%, #312e81 100%)",
+              _dark: "{colors.bg.dark}",
             },
           },
           surface: {
@@ -139,8 +158,10 @@ const customConfig = defineConfig({
           },
           nav: {
             value: {
-              base: "{colors.brand.glass.light}",
-              _dark: "{colors.brand.glass.dark}",
+              // base: "{colors.brand.glass.light}",
+              base: "{colors.bg.nav.light}",
+              // _dark: "{colors.brand.glass.dark}",
+              _dark: "{colors.bg.nav.dark}",
             },
           },
         },
