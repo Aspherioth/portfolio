@@ -35,6 +35,7 @@ export default function Footer(
 /**
  * Stylized Footer componenet.
  * @param children Content to be displayed within the footer.
+ * @param props Additional props passed to the footer component.
  * @returns
  */
 function FooterUI({
@@ -43,7 +44,7 @@ function FooterUI({
 }: React.PropsWithChildren & BoxProps): React.ReactElement {
   return (
     <Box
-      background="rgba(255, 255, 255, 0.1)"
+      bg="rgba(255, 255, 255, 0.1)"
       backdropFilter="blur(10px)"
       border="1px solid rgba(255, 255, 255, 0.2)"
       textAlign="center"
