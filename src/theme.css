@@ -4,7 +4,6 @@
     /* Surfaces */
     /*--bg: oklch(98% 0.01 270);*/
     --card: oklch(100% 0 0);
-    --border: oklch(91.2% 0.027 298);
 
     /* Text */
     --text-primary: oklch(16.5% 0.052 298);
@@ -48,7 +47,6 @@
 .theme-dark {
     --bg: oklch(21.2% 0 0);
     --card: oklch(25.9% 0 0);
-    --border: oklch(35.3% 0 0);
 
     --text-primary: oklch(100% 0 0);
     --text-secondary: oklch(94.1% 0 0);
@@ -84,7 +82,6 @@
         /* opt-in: if you add theme-auto without explicit theme, dark kicks in */
         --bg: oklch(21.2% 0 0);
         --card: oklch(25.9% 0 0);
-        --border: oklch(35.3% 0 0);
         --text-primary: oklch(100% 0 0);
         --text-secondary: oklch(94.1% 0 0);
         --text-muted: oklch(80.8% 0 0);
@@ -115,13 +112,11 @@
 
     .wop .card {
         background: var(--card);
-        border: 1px solid var(--border);
         border-radius: 1rem;
         box-shadow: var(--shadow-card);
     }
 
     .wop .bordered {
-        border: 1px solid var(--border);
         border-radius: 1rem;
     }
 
@@ -158,7 +153,6 @@
     .btn-ghost {
         background: var(--card);
         color: var(--text-primary);
-        border: 1px solid var(--border);
     }
 
     /* Alerts */
@@ -168,7 +162,6 @@
         gap: .5rem;
         padding: .75rem;
         border-radius: .5rem;
-        border: 1px solid var(--border);
         background: var(--card);
     }
 
@@ -221,7 +214,6 @@
     .code {
         font-family: var(--font-mono);
         background: var(--card);
-        border: 1px solid var(--border);
         border-radius: .5rem;
         padding: .75rem;
         font-size: .8rem;
