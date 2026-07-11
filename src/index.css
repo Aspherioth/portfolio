@@ -1,9 +1,6 @@
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
     font-weight: 400;
-
-    background-image: linear-gradient(to bottom right, var(--surface1), hsl(from var(--surface1) h s calc(l - 0.05)));
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -11,10 +8,6 @@
     -moz-osx-font-smoothing: grayscale;
 
     min-width: 24rem;
-
-    /*box-sizing: border-box;
-    width: 100%;
-    height: 100%;*/
 }
 
 body {
