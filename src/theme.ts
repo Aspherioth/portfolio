@@ -18,6 +18,9 @@ const customConfig = defineConfig({
         mono: {
           value: '"JetBrains Mono Variable", monospace',
         },
+        note: {
+          value: "'Hanken Grotesk Variable', sans-serif",
+        },
       },
       fontSizes: {
         "1.5xl": { value: "1.375rem" },
@@ -25,8 +28,8 @@ const customConfig = defineConfig({
       colors: {
         brand: {
           primary: {
-            light: { value: "oklch(35.6% 0.165 298)" },
-            dark: { value: "oklch(38.2% 0.162 298)" },
+            light: { value: "#5A60C4" },
+            dark: { value: "#9AA6F5" },
           },
           secondary: {
             light: { value: "oklch(69.8% 0.137 50)" },
@@ -74,6 +77,7 @@ const customConfig = defineConfig({
         border: {
           // light: { value: "oklch(91.2% 0.027 298)" },
           light: { value: "#E2E6F1" },
+          // light: { value: "red" },
           // dark: { value: "oklch(35.3% 0 0)" },
           dark: { value: "#2F3343" },
         },
@@ -180,7 +184,7 @@ const customConfig = defineConfig({
           },
         },
         border: {
-          DEFAULT: {
+          primary: {
             value: {
               base: "{colors.border.light}",
               _dark: "{colors.border.dark}",
@@ -195,15 +199,31 @@ const customConfig = defineConfig({
         },
         text: {
           primary: {
-            value: {
-              base: "{colors.text.primary.light}",
-              _dark: "{colors.text.primary.dark}",
+            DEFAULT: {
+              value: {
+                base: "{colors.text.primary.light}",
+                _dark: "{colors.text.primary.dark}",
+              },
+            },
+            brand: {
+              value: {
+                base: "{colors.brand.primary.light}",
+                _dark: "{colors.brand.primary.dark}",
+              },
             },
           },
           secondary: {
-            value: {
-              base: "{colors.text.secondary.light}",
-              _dark: "{colors.text.secondary.dark}",
+            DEFAULT: {
+              value: {
+                base: "{colors.text.secondary.light}",
+                _dark: "{colors.text.secondary.dark}",
+              },
+            },
+            brand: {
+              value: {
+                base: "{colors.brand.secondary.light}",
+                _dark: "{colors.brand.secondary.dark}",
+              },
             },
           },
           muted: {
