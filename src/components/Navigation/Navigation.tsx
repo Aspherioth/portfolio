@@ -24,14 +24,13 @@ export default function Navigation(): React.ReactElement {
       as="header"
       backdropFilter="saturate(140%) blur(12px)"
       bg="bg.nav"
-      borderBottomWidth="1px"
-      borderBottomColor="border"
-      px="10px"
+      borderBottom="1px solid"
+      borderColor="border.primary"
       py={4}
       position="sticky"
       top="0"
       w="100%"
-      min-height="70px"
+      min-height="68px"
       zIndex={100}
     >
       <Container maxW="container.xl">
