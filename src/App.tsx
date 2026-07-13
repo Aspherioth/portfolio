@@ -20,7 +20,6 @@ function App(): React.ReactElement {
           minW="sm"
           minH="100vh"
           pb="2rem"
-          justifyContent="space-between"
         >
           <Navigation />
           <Home />
