@@ -33,7 +33,7 @@ export default function Navigation(): React.ReactElement {
       min-height="68px"
       zIndex={100}
     >
-      <Container maxW="container.xl">
+      <Container maxW="1200px" px={{ base: "20px", md: "32px" }}>
         <Flex justify="space-between" align="center">
           <Stack gap="0">
             <Heading
@@ -73,10 +73,6 @@ export default function Navigation(): React.ReactElement {
             <Text color="text.primary" fontWeight="bold">
               Games
             </Text>
-            {/* !!!Theme will be added back when the page gets converted to Chakra UI!!! */}
-            {/*<NavLink to='/portfolio/theme' end>
-      <Text color='text.primary' fontWeight='bold'>Theme Preview</Text>
-      </NavLink>*/}
           </HStack>
 
           <VStack gap={4} hideFrom="md" alignItems="end">
@@ -108,10 +104,6 @@ export default function Navigation(): React.ReactElement {
                 <Text color="text.primary" fontWeight="bold">
                   Games
                 </Text>
-                {/* !!!Theme will be added back when the page gets converted to Chakra UI!!! */}
-                {/*<NavLink to='/portfolio/theme' end onClick={() => setIsOpen(false)}>
-        <Text color='text.primary' fontWeight='bold'>Theme Preview</Text>
-        </NavLink>*/}
               </VStack>
             </Collapsible.Content>
           </VStack>
