@@ -97,29 +97,6 @@
 
 @layer base {
 
-    /* Minimal primitives */
-    .wop {
-        /*background-image: linear-gradient(to bottom right, rgba(from var(--bg) r g b / 100%), rgba(from var(--bg) r g b / 98%)) ;*/
-        color: var(--text-primary);
-        font-family: var(--font-base);
-    }
-
-    .wop .container {
-        max-width: 72rem;
-        margin-inline: auto;
-        padding: 1rem;
-    }
-
-    .wop .card {
-        background: var(--card);
-        border-radius: 1rem;
-        box-shadow: var(--shadow-card);
-    }
-
-    .wop .bordered {
-        border-radius: 1rem;
-    }
-
     /* Buttons */
     .btn {
         display: inline-flex;
