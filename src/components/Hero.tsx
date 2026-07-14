@@ -1,12 +1,14 @@
-import { Box, Button, Heading, HStack, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Span, Text } from "@chakra-ui/react";
 
-export default function Hero() {
+export default function Hero({ id }: { id?: string }) {
   return (
     <Box
+      id={id}
       as="section"
       padding={{ base: "58px 0 54px", md: "96px 0 84px" }}
       w="100%"
       letterSpacing="-0.5px"
+      scrollMarginTop="90px"
     >
       <Box
         color="text.primary.brand"
@@ -26,30 +28,26 @@ export default function Hero() {
         lineHeight="1"
         marginBottom="34px"
       >
-        <Text
-          as="span"
+        <Span
           display="block"
           animation="0.7s ease 0.12s 1 normal both running fadeUp"
         >
           I build for the biggest
-        </Text>
-        <Text
-          as="span"
+        </Span>
+        <Span
           display="block"
           animation="0.7s ease 0.2s 1 normal both running fadeUp"
         >
           screen in the house.
-        </Text>
-        <Text
-          as="span"
+        </Span>
+        <Span
           display="block"
           animation="0.7s ease 0.28s 1 normal both running fadeUp"
         >
-          Now,{" "}
-          <Text as="span" color="text.primary.brand" fontStyle="italic">
+          <Span color="text.primary.brand" fontStyle="italic">
             worlds of my own.
-          </Text>
-        </Text>
+          </Span>
+        </Span>
       </Heading>
       <Text
         color="text.muted"
@@ -76,9 +74,9 @@ export default function Hero() {
         <Button borderRadius="11px" p="14px 22px">
           Get in touch
         </Button>
-        <Text as="span" color="text.muted" fontFamily="mono" fontSize="xs">
+        <Span color="text.muted" fontFamily="mono" fontSize="xs">
           Exploring the wonders of Ruby on Rails
-        </Text>
+        </Span>
       </HStack>
     </Box>
   );

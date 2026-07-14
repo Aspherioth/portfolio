@@ -6,6 +6,7 @@ import {
   HStack,
   IconButton,
   Link,
+  Span,
   Stack,
   Text,
   VStack,
@@ -49,8 +50,7 @@ export default function Navigation(): React.ReactElement {
               >
                 Juan Macedo
               </Heading>
-              <Text
-                as="span"
+              <Span
                 color="text.muted"
                 fontSize="2xs"
                 fontFamily="mono"
@@ -58,7 +58,7 @@ export default function Navigation(): React.ReactElement {
                 textTransform="uppercase"
               >
                 Software Engineer
-              </Text>
+              </Span>
             </Stack>
           </Link>
 
