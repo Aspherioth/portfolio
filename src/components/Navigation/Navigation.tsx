@@ -5,6 +5,7 @@ import {
   Heading,
   HStack,
   IconButton,
+  Link,
   Stack,
   Text,
   VStack,
@@ -34,30 +35,32 @@ export default function Navigation(): React.ReactElement {
     >
       <Container maxW="1200px" px={{ base: "20px", md: "32px" }} py={4}>
         <Flex justify="space-between" align="center">
-          <Stack gap="0">
-            <Heading
-              as="h1"
-              color="text.primary"
-              letterSpacing="0.2px"
-              lineHeight="1"
-              fontFamily="heading"
-              fontSize="1.5xl"
-              fontWeight="bold"
-              size="sm"
-            >
-              Juan Macedo
-            </Heading>
-            <Text
-              as="span"
-              color="text.muted"
-              fontSize="2xs"
-              fontFamily="mono"
-              letterSpacing="2px"
-              textTransform="uppercase"
-            >
-              Software Engineer
-            </Text>
-          </Stack>
+          <Link href="#top" _hover={{ textDecoration: "none" }}>
+            <Stack gap="0">
+              <Heading
+                as="h1"
+                color="text.primary"
+                letterSpacing="0.2px"
+                lineHeight="1"
+                fontFamily="heading"
+                fontSize="1.5xl"
+                fontWeight="bold"
+                size="sm"
+              >
+                Juan Macedo
+              </Heading>
+              <Text
+                as="span"
+                color="text.muted"
+                fontSize="2xs"
+                fontFamily="mono"
+                letterSpacing="2px"
+                textTransform="uppercase"
+              >
+                Software Engineer
+              </Text>
+            </Stack>
+          </Link>
 
           <HStack gap={4} hideBelow="md">
             <ColorModeButton
@@ -66,12 +69,15 @@ export default function Navigation(): React.ReactElement {
               aspectRatio={1}
               borderRadius="70px"
             />
-            <Text color="text.primary" fontWeight="bold">
-              Home
-            </Text>
-            <Text color="text.primary" fontWeight="bold">
+            <Link href="#work" color="text.primary" fontWeight="bold">
+              Work
+            </Link>
+            <Link href="#games" color="text.primary" fontWeight="bold">
               Games
-            </Text>
+            </Link>
+            <Link href="#about" color="text.primary" fontWeight="bold">
+              About
+            </Link>
           </HStack>
 
           <VStack gap={4} hideFrom="md" alignItems="end">
