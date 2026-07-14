@@ -8,7 +8,6 @@ import {
   Link,
   Span,
   Stack,
-  Text,
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
@@ -103,12 +102,15 @@ export default function Navigation(): React.ReactElement {
 
             <Collapsible.Content>
               <VStack gap={4} alignItems="end">
-                <Text color="text.primary" fontWeight="bold">
-                  Home
-                </Text>
-                <Text color="text.primary" fontWeight="bold">
+                <Link href="#work" color="text.primary" fontWeight="bold">
+                  Work
+                </Link>
+                <Link href="#games" color="text.primary" fontWeight="bold">
                   Games
-                </Text>
+                </Link>
+                <Link href="#about" color="text.primary" fontWeight="bold">
+                  About
+                </Link>
               </VStack>
             </Collapsible.Content>
           </VStack>
