@@ -6,6 +6,7 @@ export default function Hero() {
       as="section"
       padding={{ base: "58px 0 54px", md: "96px 0 84px" }}
       w="100%"
+      letterSpacing="-0.5px"
     >
       <Box
         color="text.primary.brand"

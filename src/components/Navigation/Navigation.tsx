@@ -26,14 +26,13 @@ export default function Navigation(): React.ReactElement {
       bg="bg.nav"
       borderBottom="1px solid"
       borderColor="border.primary"
-      py={4}
       position="sticky"
       top="0"
       w="100%"
       min-height="68px"
       zIndex={100}
     >
-      <Container maxW="1200px" px={{ base: "20px", md: "32px" }}>
+      <Container maxW="1200px" px={{ base: "20px", md: "32px" }} py={4}>
         <Flex justify="space-between" align="center">
           <Stack gap="0">
             <Heading
