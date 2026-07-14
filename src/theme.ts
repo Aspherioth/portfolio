@@ -30,6 +30,7 @@ const customConfig = defineConfig({
           primary: {
             light: { value: "#5A60C4" },
             dark: { value: "#9AA6F5" },
+            soft: { light: { value: "#E8EAFB" }, dark: { value: "#2A2F52" } },
           },
           secondary: {
             light: { value: "oklch(69.8% 0.137 50)" },
@@ -61,8 +62,8 @@ const customConfig = defineConfig({
           },
         },
         surface: {
-          light: { value: "oklch(90% 0 0)" },
-          dark: { value: "oklch(25% 0 0)" },
+          light: { value: "#FFFFFF" },
+          dark: { value: "#1F222D" },
         },
         card: {
           normal: {
@@ -152,6 +153,20 @@ const customConfig = defineConfig({
               _light: "{colors.bg.light}",
               // _dark: "linear-gradient(135deg, #0f172a 0%, #312e81 100%)",
               _dark: "{colors.bg.dark}",
+            },
+          },
+          primary: {
+            DEFAULT: {
+              value: {
+                base: "{colors.brand.primary.light}",
+                _dark: "{colors.brand.primary.dark}",
+              },
+            },
+            soft: {
+              value: {
+                base: "{colors.brand.primary.soft.light}",
+                _dark: "{colors.brand.primary.soft.dark}",
+              },
             },
           },
           surface: {
