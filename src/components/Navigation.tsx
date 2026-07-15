@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 
-import { ColorModeButton } from "@/components/ui/color-mode";
+import { ColorModeButton } from "@components/ui/color-mode.tsx";
 
 export default function Navigation(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
