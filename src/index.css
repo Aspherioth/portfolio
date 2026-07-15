@@ -10,6 +10,9 @@
     min-width: 24rem;
     margin: 0 auto;
     padding: 0;
+
+    letter-spacing: normal;
+    line-height: normal;
 }
 
 html {

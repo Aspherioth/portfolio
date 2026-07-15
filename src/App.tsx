@@ -18,7 +18,6 @@ function App(): React.ReactElement {
           h="100%"
           minW="sm"
           minH="100vh"
-          pb="2rem"
         >
           <Navigation />
           <Home />
