@@ -1,6 +1,5 @@
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 
-import "./App.css";
 import theme from "./theme.js";
 
 import Footer from "@components/Footer.tsx";
