@@ -5,6 +5,7 @@ import {
   Heading,
   HStack,
   IconButton,
+  Image,
   Link,
   Span,
   Stack,
@@ -62,6 +63,18 @@ export default function Navigation(): React.ReactElement {
           </Link>
 
           <HStack gap={4} hideBelow="md">
+            <Link
+              href="https://www.buymeacoffee.com/juanmpmaceh"
+              target="_blank"
+            >
+              <Image
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt="Buy Me a Coffee"
+                height="30px"
+                //style="height: 60px !important;width: 217px !important;"
+              />
+            </Link>
+
             <ColorModeButton
               colorPalette="teal"
               color="text.primary"
@@ -81,6 +94,18 @@ export default function Navigation(): React.ReactElement {
 
           <VStack gap={4} hideFrom="md" alignItems="end">
             <HStack gap={4}>
+              <Link
+                href="https://www.buymeacoffee.com/juanmpmaceh"
+                target="_blank"
+              >
+                <Image
+                  src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                  alt="Buy Me a Coffee"
+                  height="25px"
+                  //style="height: 60px !important;width: 217px !important;"
+                />
+              </Link>
+
               <ColorModeButton
                 colorPalette="teal"
                 color="text.primary"
