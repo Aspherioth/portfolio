@@ -44,6 +44,7 @@ export default function Hero({ id }: { id?: string }) {
           display="block"
           animation="0.7s ease 0.28s 1 normal both running fadeUp"
         >
+          Now,&nbsp;
           <Span color="text.primary.brand" fontStyle="italic">
             worlds of my own.
           </Span>
