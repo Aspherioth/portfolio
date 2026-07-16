@@ -68,7 +68,7 @@ export default function Home(): React.ReactElement {
             context={["TRIVIA COMPANION", "WEB APP"]}
             name="Trivia Companion"
             description="A companion for your favorite trivia board game. Generates fresh questions on demand, so game night never runs out of cards."
-            tags={["JS · CSS", "WebRTC"]}
+            tags={["JS · CSS"]}
           />
 
           <WorkCard
@@ -76,7 +76,7 @@ export default function Home(): React.ReactElement {
             context={["LIVE PREDICTION PARTY", "WEB APP"]}
             name="Eurovision Party"
             description="Friends join a room and lock in who they think will win Eurovision. Everyone commits before the reveal, then the room finds out together."
-            tags={["JS · CSS"]}
+            tags={["JS · CSS", "WebRTC"]}
           />
         </Grid>
       </ProjectGroup>
