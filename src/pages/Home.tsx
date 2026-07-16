@@ -4,6 +4,7 @@ import ProjectGroup from "@components/ProjectGroup.tsx";
 import WorkCard from "@components/cards/WorkCard.tsx";
 import About from "@components/About.tsx";
 import Contact from "@components/Contact.tsx";
+import EuroPartySrc from "@assets/europarty.png";
 
 export default function Home(): React.ReactElement {
   return (
@@ -64,6 +65,7 @@ export default function Home(): React.ReactElement {
           gap="22px"
         >
           <WorkCard
+            img={EuroPartySrc}
             context={["TRIVIA COMPANION", "WEB APP"]}
             name="Eurovision Party"
             description="Friends join a room and lock in who they think will win Eurovision. Everyone commits before the reveal, then the room finds out together."

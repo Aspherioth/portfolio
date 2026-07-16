@@ -3,6 +3,7 @@ import {
   Flex,
   Heading,
   HStack,
+  Image,
   Span,
   Stack,
   Text,
@@ -10,6 +11,7 @@ import {
 import Card from "./Card";
 
 export type WorkCardProps = {
+  img?: string;
   context: string[];
   name: string;
   description: string;
@@ -17,6 +19,7 @@ export type WorkCardProps = {
 };
 
 export default function WorkCard({
+  img,
   context,
   name,
   description,
@@ -30,8 +33,12 @@ export default function WorkCard({
           border="1px solid"
           borderColor="border.primary"
           borderRadius="16px"
+          justifyContent="center"
+          overflow="hidden"
         >
-          {/*<Image src="placeholder" alt="Test Image" height="188px" />*/}
+          {img !== undefined && (
+            <Image src={img} alt={`${name} preview`} w="stretch" h="auto" />
+          )}
         </Box>
         <HStack
           color="text.muted"
