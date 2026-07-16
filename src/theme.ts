@@ -36,6 +36,7 @@ const customConfig = defineConfig({
             light: { value: "oklch(69.8% 0.137 50)" },
             dark: { value: "oklch(37.5% 0.12 50)" },
           },
+          accent: { light: { value: "#2F9C86" }, dark: { value: "#84D8BE" } },
           teal: {
             light: { value: "oklch(70.2% 0.123 180)" },
             dark: { value: "oklch(42.8% 0.086 180)" },
@@ -76,18 +77,17 @@ const customConfig = defineConfig({
           },
         },
         border: {
-          // light: { value: "oklch(91.2% 0.027 298)" },
           light: { value: "#E2E6F1" },
-          // light: { value: "red" },
-          // dark: { value: "oklch(35.3% 0 0)" },
           dark: { value: "#2F3343" },
         },
         text: {
           primary: {
-            // light: { value: "oklch(25% 0 0)" },
             light: { value: "#2C3142" },
-            // dark: { value: "oklch(85% 0 0)" },
             dark: { value: "#E7E9F2" },
+            contrast: {
+              light: { value: "#FFFFFF" },
+              dark: { value: "#161821" },
+            },
           },
           secondary: {
             light: { value: "oklch(24.2% 0.078 298)" },
@@ -226,6 +226,12 @@ const customConfig = defineConfig({
                 _dark: "{colors.brand.primary.dark}",
               },
             },
+            contrast: {
+              value: {
+                base: "{colors.text.primary.contrast.light}",
+                _dark: "{colors.text.primary.contrast.dark}",
+              },
+            },
           },
           secondary: {
             DEFAULT: {
@@ -239,6 +245,12 @@ const customConfig = defineConfig({
                 base: "{colors.brand.secondary.light}",
                 _dark: "{colors.brand.secondary.dark}",
               },
+            },
+          },
+          accent: {
+            value: {
+              base: "{colors.brand.accent.light}",
+              _dark: "{colors.brand.accent.dark}",
             },
           },
           muted: {
