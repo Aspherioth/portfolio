@@ -10,7 +10,7 @@ import {
 
 export default function About() {
   return (
-    <Box p="40px 0px 90px">
+    <Box id="about" p="40px 0px 90px">
       <HStack
         borderTop="1px solid"
         borderColor="border.primary"

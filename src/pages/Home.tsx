@@ -1,8 +1,9 @@
-import { Box, Grid, Stack } from "@chakra-ui/react";
+import { Grid, Stack } from "@chakra-ui/react";
 import Hero from "@components/Hero.tsx";
 import ProjectGroup from "@components/ProjectGroup.tsx";
 import WorkCard from "@components/cards/WorkCard.tsx";
 import About from "@components/About.tsx";
+import Contact from "@components/Contact.tsx";
 
 export default function Home(): React.ReactElement {
   return (
@@ -78,7 +79,7 @@ export default function Home(): React.ReactElement {
         </Grid>
       </ProjectGroup>
       <About />
-      <Box id="about"></Box>
+      <Contact />
     </Stack>
   );
 }
