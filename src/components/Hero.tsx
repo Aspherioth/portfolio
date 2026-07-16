@@ -1,4 +1,4 @@
-import { Box, Button, Heading, HStack, Span, Text } from "@chakra-ui/react";
+import { Box, Heading, HStack, Link, Span, Text } from "@chakra-ui/react";
 
 export default function Hero({ id }: { id?: string }) {
   return (
@@ -69,12 +69,27 @@ export default function Hero({ id }: { id?: string }) {
         gap="18px"
         animation="0.7s ease 0.44s 1 normal both running fadeUp"
       >
-        <Button borderRadius="11px" p="14px 22px">
+        <Link
+          color="text.primary.contrast"
+          _hover={{ textDecoration: "none" }}
+          bg="bg.primary"
+          borderRadius="11px"
+          p="14px 24px"
+          href="#work"
+        >
           View selected work
-        </Button>
-        <Button borderRadius="11px" p="14px 22px">
+        </Link>
+        <Link
+          color="text.primary"
+          _hover={{ textDecoration: "none" }}
+          border="1px solid"
+          borderColor="border.primary"
+          borderRadius="11px"
+          href="#contact"
+          p="14px 24px"
+        >
           Get in touch
-        </Button>
+        </Link>
         <Span color="text.muted" fontFamily="mono" fontSize="xs">
           Exploring the wonders of Ruby on Rails
         </Span>
