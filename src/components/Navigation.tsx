@@ -77,17 +77,17 @@ export default function Navigation(): React.ReactElement {
 
             <ColorModeButton
               colorPalette="teal"
-              color="text.primary"
+              color="text.muted"
               aspectRatio={1}
               borderRadius="70px"
             />
-            <Link href="#work" color="text.primary" fontWeight="bold">
+            <Link href="#work" color="text.muted" fontFamily="note">
               Work
             </Link>
-            <Link href="#games" color="text.primary" fontWeight="bold">
+            <Link href="#games" color="text.muted" fontFamily="note">
               Games
             </Link>
-            <Link href="#about" color="text.primary" fontWeight="bold">
+            <Link href="#about" color="text.muted" fontFamily="note">
               About
             </Link>
           </HStack>
@@ -102,7 +102,6 @@ export default function Navigation(): React.ReactElement {
                   src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
                   alt="Buy Me a Coffee"
                   height="25px"
-                  //style="height: 60px !important;width: 217px !important;"
                 />
               </Link>
 
@@ -115,7 +114,7 @@ export default function Navigation(): React.ReactElement {
               <Collapsible.Trigger asChild>
                 <IconButton
                   colorPalette="teal"
-                  color="text.primary"
+                  color="text.muted"
                   variant="ghost"
                   aspectRatio={1}
                   borderRadius="70px"
@@ -127,13 +126,13 @@ export default function Navigation(): React.ReactElement {
 
             <Collapsible.Content>
               <VStack gap={4} alignItems="end">
-                <Link href="#work" color="text.primary" fontWeight="bold">
+                <Link href="#work" color="text.muted" fontFamily="note">
                   Work
                 </Link>
-                <Link href="#games" color="text.primary" fontWeight="bold">
+                <Link href="#games" color="text.muted" fontFamily="note">
                   Games
                 </Link>
-                <Link href="#about" color="text.primary" fontWeight="bold">
+                <Link href="#about" color="text.muted" fontFamily="note">
                   About
                 </Link>
               </VStack>
