@@ -15,7 +15,6 @@ import { ColorModeButton } from '@components/ui/color-mode.tsx'
 import { useState } from 'react'
 import { IoClose, IoMenu } from 'react-icons/io5'
 
-
 export default function Navigation(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false)
 

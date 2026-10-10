@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react'
 
-import type { BoxProps} from '@chakra-ui/react';
+import type { BoxProps } from '@chakra-ui/react'
 
 type CardProps = React.PropsWithChildren &
   BoxProps & { header?: string; footer?: string }
