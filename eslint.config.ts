@@ -14,6 +14,7 @@ import type { Linter } from 'eslint'
 const commonRules: Linter.RulesRecord = {
   // React modern runtime
   'react/react-in-jsx-scope': 'off',
+  'react/no-unescaped-entities': ['error', { forbid: ['>', '}'] }],
 }
 
 // Import ordering and spacing
