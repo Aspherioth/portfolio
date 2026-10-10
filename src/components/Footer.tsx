@@ -1,6 +1,8 @@
 import { Box, HStack, Span } from '@chakra-ui/react'
 
-export default function Footer(): React.ReactElement {
+import type { ReactNode } from 'react'
+
+export default function Footer(): ReactNode {
   return (
     <Box
       as='footer'

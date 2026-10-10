@@ -1,14 +1,11 @@
 import { Box, Text } from '@chakra-ui/react'
 
 import type { BoxProps } from '@chakra-ui/react'
+import type { ReactNode } from 'react'
 
-type CardProps = React.PropsWithChildren &
-  BoxProps & { header?: string; footer?: string }
+type CardProps = React.PropsWithChildren & BoxProps
 
-export default function Card({
-  children,
-  ...props
-}: CardProps): React.ReactElement {
+export default function Card({ children, ...props }: CardProps): ReactNode {
   return <CardUI {...props}>{children ?? <Text />}</CardUI>
 }
 

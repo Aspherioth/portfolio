@@ -1,7 +1,7 @@
 # .git-blame-ignore-revs
-# Fix file formatting
+# Prettier reformat after the ESLint and Prettier config change
 1582cc178f2f1d96184a7ff9eb3e1ce636068181
-# Fix file formatting
+# Import reordering from eslint --fix
 21eb08ee40f81f238c705a6dafbeafc3b168009d
-# Fix file formatting
+# Prettier cleanup after eslint --fix (Card, Navigation)
 9890d48d57419c284505b6d2ab9a452b6b642793

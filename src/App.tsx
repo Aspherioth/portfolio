@@ -4,10 +4,12 @@ import Navigation from '@components/Navigation.tsx'
 
 import theme from './theme.js'
 
+import type { ReactNode } from 'react'
+
 import { ColorModeProvider } from '@/components/ui/color-mode'
 import Home from '@/pages/Home'
 
-function App(): React.ReactElement {
+function App(): ReactNode {
   return (
     <ChakraProvider value={theme}>
       <ColorModeProvider>

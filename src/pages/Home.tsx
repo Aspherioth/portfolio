@@ -6,7 +6,9 @@ import Contact from '@components/Contact.tsx'
 import Hero from '@components/Hero.tsx'
 import ProjectGroup from '@components/ProjectGroup.tsx'
 
-export default function Home(): React.ReactElement {
+import type { ReactNode } from 'react'
+
+export default function Home(): ReactNode {
   return (
     <Stack
       as='main'
