@@ -7,24 +7,12 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 // Shared formatting and React rules
 const commonRules: Linter.RulesRecord = {
-  indent: ['error', 2],
-  semi: ['error', 'never'],
-  quotes: ['error', 'single'],
-  'jsx-quotes': ['error', 'prefer-single'],
-  'object-curly-spacing': ['error', 'always'],
-  'comma-dangle': ['error', 'always-multiline'],
-  'arrow-parens': ['error', 'always'],
-  'space-before-function-paren': [
-    'error',
-    { anonymous: 'always', named: 'never', asyncArrow: 'always' },
-  ],
-
   // React modern runtime
   'react/react-in-jsx-scope': 'off',
-  'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
 }
 
 // Import ordering and spacing
@@ -133,4 +121,5 @@ export default defineConfig([
       '@typescript-eslint/explicit-module-boundary-types': 'warn',
     },
   },
+  eslintConfigPrettier
 ])
