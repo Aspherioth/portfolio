@@ -46,7 +46,7 @@ const reactNamingRules: Linter.RulesRecord = {
 }
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'src/components/ui/color-mode.tsx']),
 
   // Shared plugin settings
   { settings: { react: { version: 'detect' } } },
