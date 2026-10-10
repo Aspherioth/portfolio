@@ -47,6 +47,9 @@ const reactNamingRules: Linter.RulesRecord = {
 export default defineConfig([
   globalIgnores(['dist']),
 
+  // Shared plugin settings
+  { settings: { react: { version: 'detect' } } },
+
   // Node-friendly config files
   {
     files: ['*.config.{js,ts}', '*rc.{js,ts}', '**/scripts/**/*.{js,ts}'],
@@ -100,9 +103,6 @@ export default defineConfig([
       ...commonRules,
       ...importRules,
       ...reactNamingRules,
-
-      indent: 'off',
-      '@typescript-eslint/indent': ['error', 2],
 
       '@typescript-eslint/no-unused-vars': [
         'error',
