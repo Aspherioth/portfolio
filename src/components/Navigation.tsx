@@ -10,114 +10,114 @@ import {
   Span,
   Stack,
   VStack,
-} from "@chakra-ui/react";
-import { useState } from "react";
-import { IoClose, IoMenu } from "react-icons/io5";
+} from '@chakra-ui/react'
+import { useState } from 'react'
+import { IoClose, IoMenu } from 'react-icons/io5'
 
-import { ColorModeButton } from "@components/ui/color-mode.tsx";
+import { ColorModeButton } from '@components/ui/color-mode.tsx'
 
 export default function Navigation(): React.ReactElement {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <Collapsible.Root
       open={isOpen}
       onOpenChange={(e) => setIsOpen(e.open)}
-      as="header"
-      backdropFilter="saturate(140%) blur(12px)"
-      bg="bg.nav"
-      borderBottom="1px solid"
-      borderColor="border.primary"
-      position="sticky"
-      top="0"
-      w="100%"
-      min-height="68px"
+      as='header'
+      backdropFilter='saturate(140%) blur(12px)'
+      bg='bg.nav'
+      borderBottom='1px solid'
+      borderColor='border.primary'
+      position='sticky'
+      top='0'
+      w='100%'
+      min-height='68px'
       zIndex={100}
     >
-      <Container maxW="1200px" px={{ base: "20px", md: "32px" }} py={4}>
-        <Flex justify="space-between" align="center">
-          <Link href="#top" _hover={{ textDecoration: "none" }}>
-            <Stack gap="0">
+      <Container maxW='1200px' px={{ base: '20px', md: '32px' }} py={4}>
+        <Flex justify='space-between' align='center'>
+          <Link href='#top' _hover={{ textDecoration: 'none' }}>
+            <Stack gap='0'>
               <Heading
-                as="h1"
-                color="text.primary"
-                letterSpacing="0.2px"
-                lineHeight="1"
-                fontFamily="heading"
-                fontSize="1.5xl"
-                fontWeight="bold"
-                size="sm"
+                as='h1'
+                color='text.primary'
+                letterSpacing='0.2px'
+                lineHeight='1'
+                fontFamily='heading'
+                fontSize='1.5xl'
+                fontWeight='bold'
+                size='sm'
               >
                 Juan Macedo
               </Heading>
               <Span
-                color="text.muted"
-                fontSize="2xs"
-                fontFamily="mono"
-                letterSpacing="2px"
-                textTransform="uppercase"
+                color='text.muted'
+                fontSize='2xs'
+                fontFamily='mono'
+                letterSpacing='2px'
+                textTransform='uppercase'
               >
                 Software Engineer
               </Span>
             </Stack>
           </Link>
 
-          <HStack gap={4} hideBelow="md">
+          <HStack gap={4} hideBelow='md'>
             <Link
-              href="https://www.buymeacoffee.com/juanmpmaceh"
-              target="_blank"
+              href='https://www.buymeacoffee.com/juanmpmaceh'
+              target='_blank'
             >
               <Image
-                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-                alt="Buy Me a Coffee"
-                height="30px"
+                src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
+                alt='Buy Me a Coffee'
+                height='30px'
                 //style="height: 60px !important;width: 217px !important;"
               />
             </Link>
 
             <ColorModeButton
-              colorPalette="teal"
-              color="text.muted"
+              colorPalette='teal'
+              color='text.muted'
               aspectRatio={1}
-              borderRadius="70px"
+              borderRadius='70px'
             />
-            <Link href="#work" color="text.muted" fontFamily="note">
+            <Link href='#work' color='text.muted' fontFamily='note'>
               Work
             </Link>
-            <Link href="#games" color="text.muted" fontFamily="note">
+            <Link href='#games' color='text.muted' fontFamily='note'>
               Games
             </Link>
-            <Link href="#about" color="text.muted" fontFamily="note">
+            <Link href='#about' color='text.muted' fontFamily='note'>
               About
             </Link>
           </HStack>
 
-          <VStack gap={4} hideFrom="md" alignItems="end">
+          <VStack gap={4} hideFrom='md' alignItems='end'>
             <HStack gap={4}>
               <Link
-                href="https://www.buymeacoffee.com/juanmpmaceh"
-                target="_blank"
+                href='https://www.buymeacoffee.com/juanmpmaceh'
+                target='_blank'
               >
                 <Image
-                  src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-                  alt="Buy Me a Coffee"
-                  height="25px"
+                  src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
+                  alt='Buy Me a Coffee'
+                  height='25px'
                 />
               </Link>
 
               <ColorModeButton
-                colorPalette="teal"
-                color="text.primary"
+                colorPalette='teal'
+                color='text.primary'
                 aspectRatio={1}
-                borderRadius="70px"
+                borderRadius='70px'
               />
               <Collapsible.Trigger asChild>
                 <IconButton
-                  colorPalette="teal"
-                  color="text.muted"
-                  variant="ghost"
+                  colorPalette='teal'
+                  color='text.muted'
+                  variant='ghost'
                   aspectRatio={1}
-                  borderRadius="70px"
+                  borderRadius='70px'
                 >
                   {isOpen ? <IoClose /> : <IoMenu />}
                 </IconButton>
@@ -125,14 +125,14 @@ export default function Navigation(): React.ReactElement {
             </HStack>
 
             <Collapsible.Content>
-              <VStack gap={4} alignItems="end">
-                <Link href="#work" color="text.muted" fontFamily="note">
+              <VStack gap={4} alignItems='end'>
+                <Link href='#work' color='text.muted' fontFamily='note'>
                   Work
                 </Link>
-                <Link href="#games" color="text.muted" fontFamily="note">
+                <Link href='#games' color='text.muted' fontFamily='note'>
                   Games
                 </Link>
-                <Link href="#about" color="text.muted" fontFamily="note">
+                <Link href='#about' color='text.muted' fontFamily='note'>
                   About
                 </Link>
               </VStack>
@@ -141,5 +141,5 @@ export default function Navigation(): React.ReactElement {
         </Flex>
       </Container>
     </Collapsible.Root>
-  );
+  )
 }

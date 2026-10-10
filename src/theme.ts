@@ -1,4 +1,4 @@
-import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
+import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react'
 
 const customConfig = defineConfig({
   theme: {
@@ -23,99 +23,99 @@ const customConfig = defineConfig({
         },
       },
       fontSizes: {
-        "1.5xl": { value: "1.375rem" },
+        '1.5xl': { value: '1.375rem' },
       },
       colors: {
         brand: {
           primary: {
-            light: { value: "#5A60C4" },
-            dark: { value: "#9AA6F5" },
-            soft: { light: { value: "#E8EAFB" }, dark: { value: "#2A2F52" } },
+            light: { value: '#5A60C4' },
+            dark: { value: '#9AA6F5' },
+            soft: { light: { value: '#E8EAFB' }, dark: { value: '#2A2F52' } },
           },
           secondary: {
-            light: { value: "oklch(69.8% 0.137 50)" },
-            dark: { value: "oklch(37.5% 0.12 50)" },
+            light: { value: 'oklch(69.8% 0.137 50)' },
+            dark: { value: 'oklch(37.5% 0.12 50)' },
           },
-          accent: { light: { value: "#2F9C86" }, dark: { value: "#84D8BE" } },
+          accent: { light: { value: '#2F9C86' }, dark: { value: '#84D8BE' } },
           teal: {
-            light: { value: "oklch(70.2% 0.123 180)" },
-            dark: { value: "oklch(42.8% 0.086 180)" },
+            light: { value: 'oklch(70.2% 0.123 180)' },
+            dark: { value: 'oklch(42.8% 0.086 180)' },
           },
           gold: {
-            light: { value: "oklch(57.4% 0.12 85)" },
-            dark: { value: "oklch(78.5% 0.125 85)" },
+            light: { value: 'oklch(57.4% 0.12 85)' },
+            dark: { value: 'oklch(78.5% 0.125 85)' },
           },
           glass: {
-            light: { value: "oklch(100 0 90 / 0.1)" },
-            dark: { value: "oklch(100 0 90 / 0.1)" },
+            light: { value: 'oklch(100 0 90 / 0.1)' },
+            dark: { value: 'oklch(100 0 90 / 0.1)' },
           },
         },
         bg: {
-          light: { value: "#F4F6FB" },
-          dark: { value: "#161821" },
+          light: { value: '#F4F6FB' },
+          dark: { value: '#161821' },
           nav: {
             light: {
-              value: "color-mix(in srgb, {colors.bg.light} 78%, transparent)",
+              value: 'color-mix(in srgb, {colors.bg.light} 78%, transparent)',
             },
             dark: {
-              value: "color-mix(in srgb, {colors.bg.dark} 78%, transparent)",
+              value: 'color-mix(in srgb, {colors.bg.dark} 78%, transparent)',
             },
           },
         },
         surface: {
-          light: { value: "#FFFFFF" },
-          dark: { value: "#1F222D" },
+          light: { value: '#FFFFFF' },
+          dark: { value: '#1F222D' },
         },
         card: {
           normal: {
-            light: { value: "oklch(100% 0 0)" },
-            dark: { value: "oklch(25.9% 0 0)" },
+            light: { value: 'oklch(100% 0 0)' },
+            dark: { value: 'oklch(25.9% 0 0)' },
           },
           bold: {
-            light: { value: "oklch(90% 0 0)" },
-            dark: { value: "oklch(35.9% 0 0)" },
+            light: { value: 'oklch(90% 0 0)' },
+            dark: { value: 'oklch(35.9% 0 0)' },
           },
         },
         border: {
-          light: { value: "#E2E6F1" },
-          dark: { value: "#2F3343" },
+          light: { value: '#E2E6F1' },
+          dark: { value: '#2F3343' },
         },
         text: {
           primary: {
-            light: { value: "#2C3142" },
-            dark: { value: "#E7E9F2" },
+            light: { value: '#2C3142' },
+            dark: { value: '#E7E9F2' },
             contrast: {
-              light: { value: "#FFFFFF" },
-              dark: { value: "#161821" },
+              light: { value: '#FFFFFF' },
+              dark: { value: '#161821' },
             },
           },
           secondary: {
-            light: { value: "oklch(24.2% 0.078 298)" },
-            dark: { value: "oklch(94.1% 0 0)" },
+            light: { value: 'oklch(24.2% 0.078 298)' },
+            dark: { value: 'oklch(94.1% 0 0)' },
           },
           muted: {
             // light: { value: "oklch(42.8% 0.067 298)" },
-            light: { value: "#6B7287" },
+            light: { value: '#6B7287' },
             // dark: { value: "oklch(80.8% 0 0)" },
-            dark: { value: "#9AA0B6" },
+            dark: { value: '#9AA0B6' },
           },
         },
         feedback: {
           success: {
-            light: { value: "oklch(94.8% 0.043 142)" },
-            dark: { value: "oklch(52.8% 0.12 142)" },
+            light: { value: 'oklch(94.8% 0.043 142)' },
+            dark: { value: 'oklch(52.8% 0.12 142)' },
           },
           warning: {
-            light: { value: "oklch(96.5% 0.056 85)" },
-            dark: { value: "oklch(61.2% 0.118 85)" },
+            light: { value: 'oklch(96.5% 0.056 85)' },
+            dark: { value: 'oklch(61.2% 0.118 85)' },
           },
           error: {
-            light: { value: "oklch(89.2% 0.075 15)" },
-            dark: { value: "oklch(42.5% 0.18 15)" },
+            light: { value: 'oklch(89.2% 0.075 15)' },
+            dark: { value: 'oklch(42.5% 0.18 15)' },
           },
           info: {
-            light: { value: "oklch(92.8% 0.065 230)" },
-            dark: { value: "oklch(54.8% 0.145 230)" },
+            light: { value: 'oklch(92.8% 0.065 230)' },
+            dark: { value: 'oklch(54.8% 0.145 230)' },
           },
         },
       },
@@ -125,21 +125,21 @@ const customConfig = defineConfig({
         //   dark: { value: '0 12px 35px rgba(0, 0, 0, 0.35)' },
         // },
         section: {
-          light: { value: "0 10px 35px rgba(0, 0, 0, 0.07)" },
-          dark: { value: "0 10px 35px rgba(0, 0, 0, 0.35)" },
+          light: { value: '0 10px 35px rgba(0, 0, 0, 0.07)' },
+          dark: { value: '0 10px 35px rgba(0, 0, 0, 0.35)' },
         },
         card: {
-          light: { value: "0 8px 20px rgba(0, 0, 0, 0.07)" },
-          dark: { value: "0 10px 25px rgba(0, 0, 0, 0.35)" },
+          light: { value: '0 8px 20px rgba(0, 0, 0, 0.07)' },
+          dark: { value: '0 10px 25px rgba(0, 0, 0, 0.35)' },
         },
         glow: {
           primary: {
-            light: { value: "0 0 10px oklch(35.6% 0.165 298 / 0.35)" },
-            dark: { value: "0 0 16px oklch(38.2% 0.162 298 / 0.55)" },
+            light: { value: '0 0 10px oklch(35.6% 0.165 298 / 0.35)' },
+            dark: { value: '0 0 16px oklch(38.2% 0.162 298 / 0.55)' },
           },
           secondary: {
-            light: { value: "0 0 10px oklch(69.8% 0.137 50 / 0.35)" },
-            dark: { value: "0 0 16px oklch(37.5% 0.12 50 / 0.55)" },
+            light: { value: '0 0 10px oklch(69.8% 0.137 50 / 0.35)' },
+            dark: { value: '0 0 16px oklch(37.5% 0.12 50 / 0.55)' },
           },
         },
       },
@@ -150,65 +150,65 @@ const customConfig = defineConfig({
           DEFAULT: {
             value: {
               // _light: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              _light: "{colors.bg.light}",
+              _light: '{colors.bg.light}',
               // _dark: "linear-gradient(135deg, #0f172a 0%, #312e81 100%)",
-              _dark: "{colors.bg.dark}",
+              _dark: '{colors.bg.dark}',
             },
           },
           primary: {
             DEFAULT: {
               value: {
-                base: "{colors.brand.primary.light}",
-                _dark: "{colors.brand.primary.dark}",
+                base: '{colors.brand.primary.light}',
+                _dark: '{colors.brand.primary.dark}',
               },
             },
             soft: {
               value: {
-                base: "{colors.brand.primary.soft.light}",
-                _dark: "{colors.brand.primary.soft.dark}",
+                base: '{colors.brand.primary.soft.light}',
+                _dark: '{colors.brand.primary.soft.dark}',
               },
             },
           },
           surface: {
             value: {
-              base: "{colors.surface.light}",
-              _dark: "{colors.surface.dark}",
+              base: '{colors.surface.light}',
+              _dark: '{colors.surface.dark}',
             },
           },
           nav: {
             value: {
               // base: "{colors.brand.glass.light}",
-              base: "{colors.bg.nav.light}",
+              base: '{colors.bg.nav.light}',
               // _dark: "{colors.brand.glass.dark}",
-              _dark: "{colors.bg.nav.dark}",
+              _dark: '{colors.bg.nav.dark}',
             },
           },
         },
         card: {
           DEFAULT: {
             value: {
-              base: "{colors.card.normal.light}",
-              _dark: "{colors.card.normal.dark}",
+              base: '{colors.card.normal.light}',
+              _dark: '{colors.card.normal.dark}',
             },
           },
           bold: {
             value: {
-              base: "{colors.card.bold.light}",
-              _dark: "{colors.card.bold.dark}",
+              base: '{colors.card.bold.light}',
+              _dark: '{colors.card.bold.dark}',
             },
           },
         },
         border: {
           primary: {
             value: {
-              base: "{colors.border.light}",
-              _dark: "{colors.border.dark}",
+              base: '{colors.border.light}',
+              _dark: '{colors.border.dark}',
             },
           },
           teal: {
             value: {
-              base: "{colors.brand.teal.light}",
-              _dark: "{colors.brand.teal.dark}",
+              base: '{colors.brand.teal.light}',
+              _dark: '{colors.brand.teal.dark}',
             },
           },
         },
@@ -216,47 +216,47 @@ const customConfig = defineConfig({
           primary: {
             DEFAULT: {
               value: {
-                base: "{colors.text.primary.light}",
-                _dark: "{colors.text.primary.dark}",
+                base: '{colors.text.primary.light}',
+                _dark: '{colors.text.primary.dark}',
               },
             },
             brand: {
               value: {
-                base: "{colors.brand.primary.light}",
-                _dark: "{colors.brand.primary.dark}",
+                base: '{colors.brand.primary.light}',
+                _dark: '{colors.brand.primary.dark}',
               },
             },
             contrast: {
               value: {
-                base: "{colors.text.primary.contrast.light}",
-                _dark: "{colors.text.primary.contrast.dark}",
+                base: '{colors.text.primary.contrast.light}',
+                _dark: '{colors.text.primary.contrast.dark}',
               },
             },
           },
           secondary: {
             DEFAULT: {
               value: {
-                base: "{colors.text.secondary.light}",
-                _dark: "{colors.text.secondary.dark}",
+                base: '{colors.text.secondary.light}',
+                _dark: '{colors.text.secondary.dark}',
               },
             },
             brand: {
               value: {
-                base: "{colors.brand.secondary.light}",
-                _dark: "{colors.brand.secondary.dark}",
+                base: '{colors.brand.secondary.light}',
+                _dark: '{colors.brand.secondary.dark}',
               },
             },
           },
           accent: {
             value: {
-              base: "{colors.brand.accent.light}",
-              _dark: "{colors.brand.accent.dark}",
+              base: '{colors.brand.accent.light}',
+              _dark: '{colors.brand.accent.dark}',
             },
           },
           muted: {
             value: {
-              base: "{colors.text.muted.light}",
-              _dark: "{colors.text.muted.dark}",
+              base: '{colors.text.muted.light}',
+              _dark: '{colors.text.muted.dark}',
             },
           },
         },
@@ -264,13 +264,13 @@ const customConfig = defineConfig({
       shadows: {
         section: {
           value: {
-            base: "{shadows.section.light}",
-            _dark: "{shadows.section.dark}",
+            base: '{shadows.section.light}',
+            _dark: '{shadows.section.dark}',
           },
         },
       },
     },
   },
-});
+})
 
-export default createSystem(defaultConfig, customConfig);
+export default createSystem(defaultConfig, customConfig)

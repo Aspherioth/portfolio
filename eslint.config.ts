@@ -7,7 +7,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
-import eslintConfigPrettier from "eslint-config-prettier/flat";
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 
 // Shared formatting and React rules
 const commonRules: Linter.RulesRecord = {
@@ -101,7 +101,7 @@ export default defineConfig([
       ...reactNamingRules,
 
       indent: 'off',
-      "@typescript-eslint/indent": ["error", 2],
+      '@typescript-eslint/indent': ['error', 2],
 
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -121,5 +121,5 @@ export default defineConfig([
       '@typescript-eslint/explicit-module-boundary-types': 'warn',
     },
   },
-  eslintConfigPrettier
+  eslintConfigPrettier,
 ])
