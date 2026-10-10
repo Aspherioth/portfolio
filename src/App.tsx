@@ -1,11 +1,11 @@
 import { ChakraProvider, Flex } from '@chakra-ui/react'
+import Footer from '@components/Footer.tsx'
+import Navigation from '@components/Navigation.tsx'
 
 import theme from './theme.js'
 
-import Footer from '@components/Footer.tsx'
-import Home from '@/pages/Home'
-import Navigation from '@components/Navigation.tsx'
 import { ColorModeProvider } from '@/components/ui/color-mode'
+import Home from '@/pages/Home'
 
 function App(): React.ReactElement {
   return (

@@ -1,10 +1,10 @@
+import EuroPartySrc from '@assets/europarty.png'
 import { Grid, Stack } from '@chakra-ui/react'
+import About from '@components/About.tsx'
+import WorkCard from '@components/cards/WorkCard.tsx'
+import Contact from '@components/Contact.tsx'
 import Hero from '@components/Hero.tsx'
 import ProjectGroup from '@components/ProjectGroup.tsx'
-import WorkCard from '@components/cards/WorkCard.tsx'
-import About from '@components/About.tsx'
-import Contact from '@components/Contact.tsx'
-import EuroPartySrc from '@assets/europarty.png'
 
 export default function Home(): React.ReactElement {
   return (

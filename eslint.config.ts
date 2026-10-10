@@ -1,13 +1,14 @@
 import js from '@eslint/js'
 import { defineConfig, globalIgnores } from 'eslint/config'
-import type { Linter } from 'eslint'
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import pluginImport from 'eslint-plugin-import'
 import pluginReact from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
-import eslintConfigPrettier from 'eslint-config-prettier/flat'
+
+import type { Linter } from 'eslint'
 
 // Shared formatting and React rules
 const commonRules: Linter.RulesRecord = {

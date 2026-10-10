@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
+
 import Card from './Card'
 
 export type WorkCardProps = {
