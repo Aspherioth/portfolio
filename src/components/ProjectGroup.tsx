@@ -1,5 +1,7 @@
 import { Box, Heading, HStack, Span, Text } from '@chakra-ui/react'
 
+import type { ReactNode } from 'react'
+
 export type ProjectGroupProps = {
   id?: string
   index?: number | string
@@ -14,7 +16,7 @@ export default function ProjectGroup({
   title,
   description,
   children,
-}: ProjectGroupProps) {
+}: ProjectGroupProps): ReactNode {
   return (
     <Box id={id} padding='40px 0px 30px' scrollMarginTop='90px'>
       <HStack

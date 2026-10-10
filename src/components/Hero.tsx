@@ -1,6 +1,8 @@
 import { Box, Heading, HStack, Link, Span, Text } from '@chakra-ui/react'
 
-export default function Hero({ id }: { id?: string }) {
+import type { ReactNode } from 'react'
+
+export default function Hero({ id }: { id?: string }): ReactNode {
   return (
     <Box
       id={id}

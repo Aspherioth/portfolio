@@ -8,7 +8,9 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-export default function About() {
+import type { ReactNode } from 'react'
+
+export default function About(): ReactNode {
   return (
     <Box id='about' p='40px 0px 90px'>
       <HStack

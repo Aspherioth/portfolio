@@ -11,6 +11,8 @@ import {
 
 import Card from './Card'
 
+import type { ReactNode } from 'react'
+
 export type WorkCardProps = {
   img?: string
   context: string[]
@@ -25,7 +27,7 @@ export default function WorkCard({
   name,
   description,
   tags,
-}: WorkCardProps) {
+}: WorkCardProps): ReactNode {
   return (
     <Card>
       <Stack gap='16px' h='100%'>

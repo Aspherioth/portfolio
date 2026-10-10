@@ -12,7 +12,7 @@ export default function Card({
   return <CardUI {...props}>{children ?? <Text />}</CardUI>
 }
 
-function CardUI({ children, header, footer, ...props }: CardProps) {
+function CardUI({ children, ...props }: CardProps) {
   return (
     <Box
       as='article'

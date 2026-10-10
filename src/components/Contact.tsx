@@ -1,7 +1,9 @@
 import { Box, Heading, HStack, Image, Link, Span, Text } from '@chakra-ui/react'
 import Card from '@components/cards/Card.tsx'
 
-export default function Contact() {
+import type { ReactNode } from 'react'
+
+export default function Contact(): ReactNode {
   return (
     <Box
       as='section'
