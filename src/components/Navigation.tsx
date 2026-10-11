@@ -2,13 +2,13 @@ import {
   Collapsible,
   Container,
   Flex,
-  Heading,
   HStack,
   IconButton,
   Image,
   Link,
   Span,
   Stack,
+  Text,
   VStack,
 } from '@chakra-ui/react'
 import { ColorModeButton } from '@components/ui/color-mode.tsx'
@@ -32,25 +32,23 @@ export default function Navigation(): ReactNode {
       position='sticky'
       top='0'
       w='100%'
-      min-height='68px'
+      minH='68px'
       zIndex={100}
     >
       <Container maxW='1200px' px={{ base: '20px', md: '32px' }} py={4}>
         <Flex justify='space-between' align='center'>
           <Link href='#top' _hover={{ textDecoration: 'none' }}>
             <Stack gap='0'>
-              <Heading
-                as='h1'
+              <Text
                 color='text.primary'
                 letterSpacing='0.2px'
                 lineHeight='1'
                 fontFamily='heading'
-                fontSize='1.5xl'
+                fontSize='logo'
                 fontWeight='bold'
-                size='sm'
               >
                 Juan Macedo
-              </Heading>
+              </Text>
               <Span
                 color='text.muted'
                 fontSize='2xs'
