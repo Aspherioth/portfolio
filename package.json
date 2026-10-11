@@ -10,7 +10,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "fix": "eslint . --fix && prettier --write .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "analyze": "vite build --mode analyze"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.29.0",
@@ -40,6 +41,7 @@
     "globals": "^16.5.0",
     "jiti": "^2.6.1",
     "prettier": "^3.6.2",
+    "rollup-plugin-visualizer": "^7.1.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.0.4",
