@@ -23,7 +23,7 @@ const customConfig = defineConfig({
         },
       },
       fontSizes: {
-        '1.5xl': { value: '1.375rem' },
+        logo: { value: '1.375rem' },
       },
       colors: {
         brand: {
