@@ -54,7 +54,7 @@ export default function WorkCard({
             <Text key={i}>{c}</Text>
           ))}
         </HStack>
-        <Heading as='h3' color='text' fontSize='26px' lineHeight='1.1'>
+        <Heading as='h3' color='text.primary' fontSize='26px' lineHeight='1.1'>
           {name}
         </Heading>
         <Text
@@ -68,7 +68,7 @@ export default function WorkCard({
         <Flex
           mt='auto'
           gap='7px'
-          color='text'
+          color='text.primary'
           fontFamily='mono'
           fontSize='11px'
         >
