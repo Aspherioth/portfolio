@@ -38,6 +38,8 @@ const importRules: Linter.RulesRecord = {
   ],
   'import/newline-after-import': 'error',
   'import/no-duplicates': 'error',
+  // Sort names inside each import; import/order handles the statements
+  'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],
 }
 
 // Optional React naming conventions
