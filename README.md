@@ -44,16 +44,17 @@ The dev server runs at `http://localhost:5173/portfolio/`. The `/portfolio/` pat
 
 ### Scripts
 
-| Script             | What it does                                                        |
-| ------------------ | ------------------------------------------------------------------- |
-| `npm run dev`      | Starts the Vite dev server with hot reload                          |
-| `npm run build`    | Builds the production site into `dist/`                             |
-| `npm run preview`  | Serves the built `dist/` locally to check the production build      |
-| `npm run analyze`  | Builds and opens a bundle size report (`stats.html`, not committed) |
-| `npm run lint`     | Checks the whole project with ESLint                                |
-| `npm run lint:fix` | Fixes what ESLint can fix automatically                             |
-| `npm run format`   | Formats every file with Prettier                                    |
-| `npm run fix`      | Runs `lint:fix` and then `format`                                   |
+| Script              | What it does                                                        |
+| ------------------- | ------------------------------------------------------------------- |
+| `npm run dev`       | Starts the Vite dev server with hot reload                          |
+| `npm run build`     | Builds the production site into `dist/`                             |
+| `npm run preview`   | Serves the built `dist/` locally to check the production build      |
+| `npm run analyze`   | Builds and opens a bundle size report (`stats.html`, not committed) |
+| `npm run lint`      | Checks the whole project with ESLint                                |
+| `npm run typecheck` | Type-checks the project with TypeScript                             |
+| `npm run lint:fix`  | Fixes what ESLint can fix automatically                             |
+| `npm run format`    | Formats every file with Prettier                                    |
+| `npm run fix`       | Runs `lint:fix` and then `format`                                   |
 
 ## Project Structure
 
@@ -73,7 +74,7 @@ Imports can use the path aliases `@/`, `@assets/`, `@components/` and `@pages/`,
 
 ## Deployment
 
-Every push to `main` builds the site and deploys it to GitHub Pages (`.github/workflows/deploy.yml`). Pull requests run the same build without deploying, so a green check on a PR means the site will build once it's merged.
+Every push to `main` builds the site and deploys it to GitHub Pages (`.github/workflows/deploy.yml`). Before building, the workflow runs lint and the type check, so a lint error or type error stops the deploy. Pull requests run the same checks and build without deploying, so a green check on a PR means the site will build once it's merged.
 
 ## License
 
