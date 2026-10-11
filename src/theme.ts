@@ -1,7 +1,49 @@
-import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react'
+import { createSystem, defaultBaseConfig, defineConfig } from '@chakra-ui/react'
+import {
+  buttonRecipe,
+  collapsibleSlotRecipe,
+  containerRecipe,
+  headingRecipe,
+  linkRecipe,
+  skeletonRecipe,
+  animationStyles,
+  breakpoints,
+  cssVarsPrefix,
+  cssVarsRoot,
+  globalCss,
+  keyframes,
+  layerStyles,
+  semanticTokens,
+  textStyles,
+  tokens,
+} from '@chakra-ui/react/theme'
+
+const chakraTheme = defineConfig({
+  preflight: true,
+  cssVarsPrefix,
+  cssVarsRoot,
+  globalCss,
+  theme: {
+    breakpoints,
+    keyframes,
+    tokens,
+    semanticTokens,
+    textStyles,
+    layerStyles,
+    animationStyles,
+  },
+})
 
 const customConfig = defineConfig({
   theme: {
+    recipes: {
+      button: buttonRecipe,
+      container: containerRecipe,
+      heading: headingRecipe,
+      link: linkRecipe,
+      skeleton: skeletonRecipe,
+    },
+    slotRecipes: { collapsible: collapsibleSlotRecipe },
     tokens: {
       fonts: {
         card: {
@@ -273,4 +315,4 @@ const customConfig = defineConfig({
   },
 })
 
-export default createSystem(defaultConfig, customConfig)
+export default createSystem(defaultBaseConfig, chakraTheme, customConfig)
