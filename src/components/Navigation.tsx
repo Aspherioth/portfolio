@@ -70,7 +70,7 @@ export default function Navigation(): ReactNode {
               <Image
                 src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
                 alt='Buy Me a Coffee'
-                height='30px'
+                h='30px'
                 //style="height: 60px !important;width: 217px !important;"
               />
             </Link>
@@ -101,7 +101,7 @@ export default function Navigation(): ReactNode {
                 <Image
                   src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
                   alt='Buy Me a Coffee'
-                  height='25px'
+                  h='25px'
                 />
               </Link>
 
