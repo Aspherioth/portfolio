@@ -7,7 +7,7 @@ import '@fontsource/instrument-serif/latin-italic'
 import '@fontsource-variable/hanken-grotesk'
 import '@fontsource-variable/jetbrains-mono/wght.css'
 
-import App from '@/App.js'
+import App from '@/App'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>

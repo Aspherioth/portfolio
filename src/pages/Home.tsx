@@ -1,10 +1,11 @@
-import EuroPartySrc from '@assets/europarty.png'
 import { Grid, Stack } from '@chakra-ui/react'
-import About from '@components/About.tsx'
-import WorkCard from '@components/cards/WorkCard.tsx'
-import Contact from '@components/Contact.tsx'
-import Hero from '@components/Hero.tsx'
-import ProjectGroup from '@components/ProjectGroup.tsx'
+
+import EuroPartySrc from '@/assets/europarty.png'
+import About from '@/components/About'
+import WorkCard from '@/components/cards/WorkCard'
+import Contact from '@/components/Contact'
+import Hero from '@/components/Hero'
+import ProjectGroup from '@/components/ProjectGroup'
 
 import type { ReactNode } from 'react'
 

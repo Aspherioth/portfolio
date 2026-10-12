@@ -51,7 +51,13 @@ export default defineConfig([
   globalIgnores(['dist', 'src/components/ui/color-mode.tsx']),
 
   // Shared plugin settings
-  { settings: { react: { version: 'detect' } } },
+  {
+    settings: {
+      react: { version: 'detect' },
+      // Treat the @/ alias as our own code so import/order groups it as internal
+      'import/internal-regex': '^@/',
+    },
+  },
 
   // Node-friendly config files
   {
