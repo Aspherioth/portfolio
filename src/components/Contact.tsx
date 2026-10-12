@@ -22,7 +22,7 @@ export default function Contact(): ReactNode {
         <Text
           color='text.primary.brand'
           fontFamily='mono'
-          fontSize='12px'
+          fontSize='xs'
           letterSpacing='3px'
           mb='22px'
         >
@@ -30,7 +30,7 @@ export default function Contact(): ReactNode {
         </Text>
         <Heading
           as='h2'
-          fontSize='clamp(36px, 6vw, 72px)'
+          fontSize='callout'
           lineHeight='1.02'
           m='0px auto 30px'
           maxW='16ch'
@@ -43,7 +43,7 @@ export default function Contact(): ReactNode {
         </Heading>
         <Text
           color='text.muted'
-          fontSize='17px'
+          fontSize='lead'
           lineHeight='1.6'
           m='0px auto 40px'
           maxW='50ch'
@@ -80,7 +80,7 @@ export default function Contact(): ReactNode {
 
         <Text
           color='text.muted'
-          fontSize='17px'
+          fontSize='lead'
           lineHeight='1.6'
           m='0px auto 40px'
           maxW='50ch'

@@ -26,7 +26,7 @@ export default function Hero({ id }: { id?: string }): ReactNode {
       <Heading
         as='h1'
         fontFamily='heading'
-        fontSize='clamp(48px, 7.5vw, 104px)'
+        fontSize='display'
         lineHeight='1'
         mb='34px'
       >
