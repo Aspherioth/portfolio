@@ -1,13 +1,13 @@
 import { ChakraProvider, Flex } from '@chakra-ui/react'
-import Footer from '@components/Footer.tsx'
-import Navigation from '@components/Navigation.tsx'
 
-import theme from './theme.js'
-
-import type { ReactNode } from 'react'
-
+import Footer from '@/components/Footer'
+import Navigation from '@/components/Navigation'
 import { ColorModeProvider } from '@/components/ui/color-mode'
 import Home from '@/pages/Home'
+
+import theme from './theme'
+
+import type { ReactNode } from 'react'
 
 function App(): ReactNode {
   return (

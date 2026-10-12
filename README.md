@@ -70,7 +70,7 @@ src/
 └── main.tsx       Entry point
 ```
 
-Imports can use the path aliases `@/`, `@assets/`, `@components/` and `@pages/`, which point into `src/` (configured in `tsconfig.json`).
+Imports can use the path alias `@/`, which points into `src/` (configured in `tsconfig.json`).
 
 ## Deployment
 

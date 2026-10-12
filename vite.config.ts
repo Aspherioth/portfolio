@@ -10,12 +10,4 @@ export default defineConfig(({ mode }) => ({
     mode === 'analyze' && (visualizer({ open: true }) as PluginOption),
   ],
   base: '/portfolio',
-  resolve: {
-    alias: {
-      '@assets/': '/src/assets/*',
-      '@components/': '/src/components/*',
-      '@pages/': '/src/pages/*',
-      '@/*': '/src/*',
-    },
-  },
 }))

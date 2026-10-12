@@ -1,5 +1,6 @@
 import { Box, Heading, HStack, Image, Link, Span, Text } from '@chakra-ui/react'
-import Card from '@components/cards/Card.tsx'
+
+import Card from '@/components/cards/Card'
 
 import type { ReactNode } from 'react'
 

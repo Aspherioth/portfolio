@@ -11,9 +11,10 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react'
-import { ColorModeButton } from '@components/ui/color-mode.tsx'
 import { useState } from 'react'
 import { IoClose, IoMenu } from 'react-icons/io5'
+
+import { ColorModeButton } from '@/components/ui/color-mode'
 
 import type { ReactNode } from 'react'
 
