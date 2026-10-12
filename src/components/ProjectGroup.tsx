@@ -18,7 +18,7 @@ export default function ProjectGroup({
   children,
 }: ProjectGroupProps): ReactNode {
   return (
-    <Box id={id} padding='40px 0px 30px' scrollMarginTop='90px'>
+    <Box id={id} p='40px 0px 30px' scrollMarginTop='90px'>
       <HStack
         borderTop='1px solid'
         borderColor='border.primary'

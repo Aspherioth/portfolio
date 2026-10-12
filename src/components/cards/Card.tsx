@@ -15,7 +15,7 @@ function CardUI({ children, ...props }: CardProps) {
       as='article'
       color='text.primary'
       bg='bg.surface'
-      padding='16px'
+      p='16px'
       border='1px solid'
       borderColor='border.primary'
       borderRadius='16px'
