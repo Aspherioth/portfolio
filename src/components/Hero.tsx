@@ -7,7 +7,7 @@ export default function Hero({ id }: { id?: string }): ReactNode {
     <Box
       id={id}
       as='section'
-      padding={{ base: '58px 0 54px', md: '96px 0 84px' }}
+      p={{ base: '58px 0 54px', md: '96px 0 84px' }}
       w='100%'
       letterSpacing='-0.5px'
       scrollMarginTop='90px'
@@ -17,7 +17,7 @@ export default function Hero({ id }: { id?: string }): ReactNode {
         fontSize='xs'
         fontFamily='mono'
         letterSpacing='3px'
-        marginBottom='28px'
+        mb='28px'
         textTransform='uppercase'
         animation='0.7s ease 0.05s 1 normal both running fadeUp'
       >
@@ -28,7 +28,7 @@ export default function Hero({ id }: { id?: string }): ReactNode {
         fontFamily='heading'
         fontSize='clamp(48px, 7.5vw, 104px)'
         lineHeight='1'
-        marginBottom='34px'
+        mb='34px'
       >
         <Span
           display='block'
@@ -55,7 +55,7 @@ export default function Hero({ id }: { id?: string }): ReactNode {
       <Text
         color='text.muted'
         maxW='56ch'
-        marginBottom='40px'
+        mb='40px'
         fontFamily='note'
         fontSize='lg'
         lineHeight='1.65'

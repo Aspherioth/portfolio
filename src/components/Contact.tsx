@@ -93,7 +93,7 @@ export default function Contact(): ReactNode {
           <Image
             src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
             alt='Buy Me a Coffee'
-            height='40px'
+            h='40px'
           />
         </Link>
       </Card>
