@@ -18,13 +18,13 @@ export default function Footer(): ReactNode {
         maxW='1200px'
         p='26px 32px'
       >
-        <Span color='text.primary' fontFamily='heading' fontSize='18px'>
+        <Span color='text.primary' fontFamily='heading' fontSize='lg'>
           Juan Macedo
         </Span>
         <Span
           color='text.muted'
           fontFamily='mono'
-          fontSize='11px'
+          fontSize='label'
           letterSpacing='1px'
         >
           © 2026 · Designed & built between commits

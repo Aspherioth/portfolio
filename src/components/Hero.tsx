@@ -2,7 +2,11 @@ import { Box, Heading, HStack, Link, Span, Text } from '@chakra-ui/react'
 
 import type { ReactNode } from 'react'
 
-export default function Hero({ id }: { id?: string }): ReactNode {
+export type HeroProps = {
+  id?: string
+}
+
+export default function Hero({ id }: HeroProps): ReactNode {
   return (
     <Box
       id={id}
@@ -26,7 +30,7 @@ export default function Hero({ id }: { id?: string }): ReactNode {
       <Heading
         as='h1'
         fontFamily='heading'
-        fontSize='clamp(48px, 7.5vw, 104px)'
+        fontSize='display'
         lineHeight='1'
         mb='34px'
       >

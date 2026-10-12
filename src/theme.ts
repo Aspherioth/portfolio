@@ -65,7 +65,17 @@ const customConfig = defineConfig({
         },
       },
       fontSizes: {
-        logo: { value: '1.375rem' },
+        // Role-based sizes that sit between Chakra's scale steps
+        label: { value: '0.6875rem' }, // 11px, mono uppercase labels
+        body: { value: '0.9375rem' }, // 15px, card and section copy
+        lead: { value: '1.0625rem' }, // 17px, contact paragraphs
+        logo: { value: '1.375rem' }, // 22px
+        cardTitle: { value: '1.625rem' }, // 26px
+        // Fluid headings: clamp(min, preferred, max)
+        intro: { value: 'clamp(1.625rem, 3vw, 2.375rem)' }, // 26-38px
+        sectionTitle: { value: 'clamp(1.875rem, 4vw, 2.875rem)' }, // 30-46px
+        callout: { value: 'clamp(2.25rem, 6vw, 4.5rem)' }, // 36-72px
+        display: { value: 'clamp(3rem, 7.5vw, 6.5rem)' }, // 48-104px
       },
       colors: {
         brand: {

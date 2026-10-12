@@ -7,7 +7,7 @@ export type ProjectGroupProps = {
   index?: number | string
   title: string
   description?: string
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export default function ProjectGroup({
@@ -27,12 +27,12 @@ export default function ProjectGroup({
         mb='40px'
         pt='26px'
       >
-        <Heading as='h2' fontSize='clamp(30px, 4vw, 46px)' lineHeight='1'>
+        <Heading as='h2' fontSize='sectionTitle' lineHeight='1'>
           {index != undefined && (
             <Span
               color='text.muted'
               fontFamily='mono'
-              fontSize='14px'
+              fontSize='sm'
               fontWeight='normal'
               mr='14px'
               verticalAlign='6px'
@@ -45,7 +45,7 @@ export default function ProjectGroup({
         </Heading>
 
         {description != undefined && (
-          <Text color='text.muted' maxW='42ch' fontSize='15px' lineHeight='1.6'>
+          <Text color='text.muted' maxW='42ch' fontSize='body' lineHeight='1.6'>
             {description}
           </Text>
         )}

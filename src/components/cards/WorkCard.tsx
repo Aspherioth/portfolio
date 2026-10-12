@@ -46,7 +46,7 @@ export default function WorkCard({
         <HStack
           color='text.muted'
           fontFamily='mono'
-          fontSize='11px'
+          fontSize='label'
           justifyContent='space-between'
           textTransform='uppercase'
         >
@@ -54,13 +54,18 @@ export default function WorkCard({
             <Text key={i}>{c}</Text>
           ))}
         </HStack>
-        <Heading as='h3' color='text.primary' fontSize='26px' lineHeight='1.1'>
+        <Heading
+          as='h3'
+          color='text.primary'
+          fontSize='cardTitle'
+          lineHeight='1.1'
+        >
           {name}
         </Heading>
         <Text
           color='text.muted'
           fontFamily='note'
-          fontSize='15px'
+          fontSize='body'
           lineHeight='1.6'
         >
           {description}
@@ -70,7 +75,7 @@ export default function WorkCard({
           gap='7px'
           color='text.primary'
           fontFamily='mono'
-          fontSize='11px'
+          fontSize='label'
         >
           {tags.map((t, i) => (
             <Span

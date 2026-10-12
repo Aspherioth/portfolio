@@ -21,11 +21,11 @@ export default function About(): ReactNode {
         mb='40px'
         pt='26px'
       >
-        <Heading as='h2' fontSize='clamp(30px, 4vw, 46px)' lineHeight='1'>
+        <Heading as='h2' fontSize='sectionTitle' lineHeight='1'>
           <Span
             color='text.muted'
             fontFamily='mono'
-            fontSize='14px'
+            fontSize='sm'
             fontWeight='normal'
             mr='14px'
             verticalAlign='6px'
@@ -57,7 +57,7 @@ export default function About(): ReactNode {
         <GridItem>
           <Text
             fontFamily='heading'
-            fontSize='clamp(26px, 3vw, 38px)'
+            fontSize='intro'
             lineHeight='1.28'
             m='0px 0px 26px'
           >
@@ -65,7 +65,7 @@ export default function About(): ReactNode {
             disappear so the experience can take over.
           </Text>
           <Text
-            fontSize='16px'
+            fontSize='md'
             lineHeight='1.7'
             color='text.muted'
             maxW='60ch'
@@ -77,7 +77,7 @@ export default function About(): ReactNode {
             millisecond and the moment in equal measure.
           </Text>
           <Text
-            fontSize='16px'
+            fontSize='md'
             lineHeight='1.7'
             color='text.muted'
             maxW='60ch'
@@ -117,20 +117,25 @@ export default function About(): ReactNode {
   )
 }
 
-function AboutCell({ category, value }: { category: string; value: string }) {
+type AboutCellProps = {
+  category: string
+  value: string
+}
+
+function AboutCell({ category, value }: AboutCellProps): ReactNode {
   return (
     <>
       <Box
         color='text.muted'
         fontFamily='mono'
-        fontSize='11px'
+        fontSize='label'
         letterSpacing='1'
         mb='6px'
         textTransform='uppercase'
       >
         {category}
       </Box>
-      <Box color='text.primary' fontFamily='note' fontSize='15px'>
+      <Box color='text.primary' fontFamily='note' fontSize='body'>
         {value}
       </Box>
     </>
