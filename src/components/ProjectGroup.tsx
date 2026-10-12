@@ -7,7 +7,7 @@ export type ProjectGroupProps = {
   index?: number | string
   title: string
   description?: string
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export default function ProjectGroup({

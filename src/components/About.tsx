@@ -117,7 +117,12 @@ export default function About(): ReactNode {
   )
 }
 
-function AboutCell({ category, value }: { category: string; value: string }) {
+type AboutCellProps = {
+  category: string
+  value: string
+}
+
+function AboutCell({ category, value }: AboutCellProps): ReactNode {
   return (
     <>
       <Box
