@@ -1,143 +1,86 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-  HStack,
-  Span,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Grid, Image, Text } from '@chakra-ui/react'
+
+import portrait from '@/assets/portrait.webp'
+import Section from '@/components/Section'
 
 import type { ReactNode } from 'react'
 
+const PARAGRAPHS = [
+  'Since 2017 I’ve shipped interfaces for smart TVs and streaming platforms: constrained hardware, remote-control navigation, and audiences of every ability. Making that feel instant taught me to care about every millisecond and every focus state.',
+  'Those habits carry straight over to the web: every element reachable by keyboard, focus states you can actually see, and pages that stay fast on a cheap phone.',
+  'Right now I’m learning Ruby on Rails, building small games, and getting deliberate about AI-assisted development.',
+  'Off the clock I play automation games: Shapez 2, modded Minecraft, Melvor Idle. They scratch the same itch as performance work: find the bottleneck, fix it, watch the line move faster.',
+]
+
+const FACTS = [
+  { term: 'Based in', value: 'Madeira, Portugal' },
+  { term: 'Languages', value: 'Portuguese (native), English (professional)' },
+]
+
 export default function About(): ReactNode {
   return (
-    <Box id='about' p='40px 0px 90px'>
-      <HStack
-        borderTop='1px solid'
-        borderColor='border.primary'
-        justifyContent='space-between'
-        flexWrap='wrap'
-        mb='40px'
-        pt='26px'
+    <Section id='about' title='About'>
+      <Grid
+        templateColumns={{ base: '1fr', lg: '300px minmax(0, 1fr)' }}
+        gap={{ base: '32px', lg: '52px' }}
+        alignItems='start'
       >
-        <Heading as='h2' fontSize='sectionTitle' lineHeight='1'>
-          <Span
-            color='text.muted'
-            fontFamily='mono'
-            fontSize='sm'
-            fontWeight='normal'
-            mr='14px'
-            verticalAlign='6px'
-          >
-            03
-          </Span>
-          About
-        </Heading>
-      </HStack>
+        <Image
+          src={portrait}
+          alt='Portrait of Juan Macedo'
+          loading='lazy'
+          w='full'
+          maxW={{ base: '320px', lg: 'none' }}
+          aspectRatio='4/5'
+          objectFit='cover'
+          borderRadius='3px'
+        />
 
-      <Grid gap='54px' templateColumns={{ base: '1fr', md: '0.85fr 1.15fr' }}>
-        {/*Image*/}
-        <GridItem h='fit-content' position={{ md: 'sticky' }} top='100px'>
-          <Box
-            w='full'
-            border='1px solid'
-            borderColor='border.primary'
-            borderRadius='16px'
-            aspectRatio='4/5'
-            bg="url('https://avatars.githubusercontent.com/u/5093062?s=400&u=84325c807d9502985f1af7a94a0f0b5b60e00a69&v=4')"
-            bgPos='center'
-            bgSize='cover'
-            bgRepeat='no-repeat'
-            p='14px'
-          ></Box>
-        </GridItem>
-
-        {/*Description*/}
-        <GridItem>
+        <Box maxW='62ch'>
           <Text
             fontFamily='heading'
             fontSize='intro'
-            lineHeight='1.28'
-            m='0px 0px 26px'
+            lineHeight='1.25'
+            mb='24px'
+            textWrap='pretty'
           >
-            I'm Juan, an engineer who's spent ten years making technology
-            disappear so the experience can take over.
+            I learned frontend on the hardest screens to build for, and it made
+            me obsessive about speed and access.
           </Text>
-          <Text
-            fontSize='md'
-            lineHeight='1.7'
-            color='text.muted'
-            maxW='60ch'
-            m='0px 0px 18px'
+          {PARAGRAPHS.map((paragraph) => (
+            <Text
+              key={paragraph}
+              mb='16px'
+              fontSize='prose'
+              lineHeight='1.7'
+              color='fg.muted'
+              textWrap='pretty'
+            >
+              {paragraph}
+            </Text>
+          ))}
+          <Grid
+            as='dl'
+            templateColumns='repeat(2, minmax(0, 1fr))'
+            gap='16px 28px'
+            mt='30px'
+            pt='20px'
+            borderTop='1px solid'
+            borderColor='border'
           >
-            Most of my career has lived inside smart TVs and set-top boxes:
-            constrained hardware, demanding users, and interfaces that have to
-            feel instant from across the room. It taught me to care about the
-            millisecond and the moment in equal measure.
-          </Text>
-          <Text
-            fontSize='md'
-            lineHeight='1.7'
-            color='text.muted'
-            maxW='60ch'
-            m='0px 0px 34px'
-          >
-            Now I'm pointing that same obsession at games: designing small
-            worlds, writing my own engines, and learning the parts of the craft
-            no platform handed me. This page is where that journey gets
-            documented.
-          </Text>
-          <Grid templateColumns='repeat(2, 1fr)' gap='18px 28px'>
-            <GridItem>
-              <AboutCell
-                category='Last Adventure'
-                value='Senior Software Engineer · Smart TV'
-              />
-            </GridItem>
-            <GridItem>
-              <AboutCell
-                category='Current Focus'
-                value='Building games, solo'
-              />
-            </GridItem>
-            <GridItem>
-              <AboutCell category='Main Toolbox' value='JS / TS · Godot' />
-            </GridItem>
-            <GridItem>
-              <AboutCell
-                category='General Mindset'
-                value='Performance & polish'
-              />
-            </GridItem>
+            {FACTS.map(({ term, value }) => (
+              <div key={term}>
+                <Box as='dt' fontSize='sm' fontWeight='semibold' mb='4px'>
+                  {term}
+                </Box>
+                <Box as='dd' fontSize='body' color='fg.muted'>
+                  {value}
+                </Box>
+              </div>
+            ))}
           </Grid>
-        </GridItem>
+        </Box>
       </Grid>
-    </Box>
-  )
-}
-
-type AboutCellProps = {
-  category: string
-  value: string
-}
-
-function AboutCell({ category, value }: AboutCellProps): ReactNode {
-  return (
-    <>
-      <Box
-        color='text.muted'
-        fontFamily='mono'
-        fontSize='label'
-        letterSpacing='1'
-        mb='6px'
-        textTransform='uppercase'
-      >
-        {category}
-      </Box>
-      <Box color='text.primary' fontFamily='note' fontSize='body'>
-        {value}
-      </Box>
-    </>
+    </Section>
   )
 }

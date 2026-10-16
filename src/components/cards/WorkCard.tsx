@@ -1,94 +1,115 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Image,
-  Span,
-  Stack,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Flex, Heading, Link, Stack, Text } from '@chakra-ui/react'
 
-import Card from './Card'
+import ProjectMedia from '@/components/cards/ProjectMedia'
 
+import type { WorkProject } from '@/data/content'
 import type { ReactNode } from 'react'
 
 export type WorkCardProps = {
-  img?: string
-  context: string[]
-  name: string
-  description: string
-  tags: string[]
+  project: WorkProject
 }
 
-export default function WorkCard({
-  img,
-  context,
-  name,
-  description,
-  tags,
-}: WorkCardProps): ReactNode {
+export default function WorkCard({ project }: WorkCardProps): ReactNode {
+  const { role, meta, title, problem, did, outcome, tags, links } = project
+
   return (
-    <Card>
-      <Stack gap='16px' h='100%'>
-        <Box
-          h='188px'
-          border='1px solid'
-          borderColor='border.primary'
-          borderRadius='16px'
-          justifyContent='center'
-          overflow='hidden'
-        >
-          {img !== undefined && (
-            <Image src={img} alt={`${name} preview`} w='stretch' h='auto' />
-          )}
-        </Box>
-        <HStack
-          color='text.muted'
-          fontFamily='mono'
-          fontSize='label'
-          justifyContent='space-between'
-          textTransform='uppercase'
-        >
-          {context.map((c, i) => (
-            <Text key={i}>{c}</Text>
-          ))}
-        </HStack>
-        <Heading
-          as='h3'
-          color='text.primary'
-          fontSize='cardTitle'
-          lineHeight='1.1'
-        >
-          {name}
-        </Heading>
-        <Text
-          color='text.muted'
-          fontFamily='note'
-          fontSize='body'
-          lineHeight='1.6'
-        >
-          {description}
+    <Stack as='article' gap='16px'>
+      <ProjectMedia
+        title={title}
+        cover={project.cover}
+        images={project.images}
+      />
+
+      <Flex justify='space-between' gap='12px' fontSize='sm' color='fg.muted'>
+        <Text fontWeight='semibold' color='fg'>
+          {role}
         </Text>
-        <Flex
-          mt='auto'
-          gap='7px'
-          color='text.primary'
-          fontFamily='mono'
-          fontSize='label'
-        >
-          {tags.map((t, i) => (
-            <Span
-              key={i}
-              bgColor='bg.primary.soft'
-              borderRadius='6px'
-              p='5px 9px'
-            >
-              {t}
-            </Span>
-          ))}
+        <Text>{meta}</Text>
+      </Flex>
+      <Heading
+        as='h3'
+        fontFamily='heading'
+        fontSize='cardTitle'
+        fontWeight='normal'
+        lineHeight='1.08'
+        mt='-6px'
+      >
+        {title}
+      </Heading>
+
+      <Box as='dl' display='grid' gap='12px'>
+        <CaseStudyItem term='Problem'>{problem}</CaseStudyItem>
+        <CaseStudyItem term='What I did'>{did}</CaseStudyItem>
+        <CaseStudyItem term='Outcome' highlight>
+          {outcome}
+        </CaseStudyItem>
+      </Box>
+
+      <Text
+        mt='auto'
+        pt='12px'
+        borderTop='1px solid'
+        borderColor='border'
+        fontSize='label'
+        lineHeight='1.6'
+        color='fg.muted'
+      >
+        {tags.join(', ')}
+      </Text>
+
+      {links.length > 0 && (
+        <Flex wrap='wrap' gap='20px' mt='-4px' fontSize='body'>
+          {links.map((link) =>
+            link.url ? (
+              <Link
+                key={link.label}
+                href={link.url}
+                target='_blank'
+                rel='noopener'
+                color='primary'
+                fontWeight='semibold'
+                textDecoration='underline'
+                textUnderlineOffset='4px'
+                _hover={{ color: 'fg' }}
+              >
+                {link.label} ↗
+              </Link>
+            ) : (
+              <Text key={link.label} color='fg.muted'>
+                {link.label} (coming soon)
+              </Text>
+            ),
+          )}
         </Flex>
-      </Stack>
-    </Card>
+      )}
+    </Stack>
+  )
+}
+
+type CaseStudyItemProps = {
+  term: string
+  highlight?: boolean
+  children: ReactNode
+}
+
+function CaseStudyItem({
+  term,
+  highlight = false,
+  children,
+}: CaseStudyItemProps): ReactNode {
+  return (
+    <div>
+      <Box as='dt' fontSize='sm' fontWeight='bold' mb='2px'>
+        {term}
+      </Box>
+      <Box
+        as='dd'
+        fontSize='body'
+        lineHeight='1.55'
+        color={highlight ? 'fg' : 'fg.muted'}
+      >
+        {children}
+      </Box>
+    </div>
   )
 }

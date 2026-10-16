@@ -1,102 +1,76 @@
-import { Box, Heading, HStack, Image, Link, Span, Text } from '@chakra-ui/react'
+import { Flex, Link, Text } from '@chakra-ui/react'
 
-import Card from '@/components/cards/Card'
+import Section from '@/components/Section'
+import {
+  COFFEE_URL,
+  CV_URL,
+  EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+} from '@/data/content'
 
+import type { LinkProps } from '@chakra-ui/react'
 import type { ReactNode } from 'react'
+
+const linkStyle: LinkProps = {
+  color: 'fg',
+  textDecoration: 'underline',
+  textUnderlineOffset: '4px',
+  _hover: { color: 'primary' },
+}
 
 export default function Contact(): ReactNode {
   return (
-    <Box
-      as='section'
-      id='contact'
-      scrollMarginTop='90px'
-      p='46px 0px 110px'
-      w='full'
-    >
-      <Card
-        w='full'
-        maxW='1200px'
-        p='clamp(40px, 6vw, 76px)'
-        textAlign='center'
+    <Section id='contact' title='Contact' pb='100px'>
+      <Text
+        mt='-16px'
+        mb='26px'
+        maxW='52ch'
+        fontSize='lead'
+        lineHeight='1.55'
+        color='fg.muted'
       >
-        <Text
-          color='text.primary.brand'
-          fontFamily='mono'
-          fontSize='xs'
-          letterSpacing='3px'
-          mb='22px'
-        >
-          Let's talk
-        </Text>
-        <Heading
-          as='h2'
-          fontSize='callout'
-          lineHeight='1.02'
-          m='0px auto 30px'
-          maxW='16ch'
-        >
-          Let's make something worth{' '}
-          <Span color='text.accent' fontStyle='italic'>
-            playing
-          </Span>
-          .
-        </Heading>
-        <Text
-          color='text.muted'
-          fontSize='lead'
-          lineHeight='1.6'
-          m='0px auto 40px'
-          maxW='50ch'
-        >
-          Hiring, collaborating on a game, or just want to compare notes on
-          living-room UX? My inbox is open.
-        </Text>
-
-        <HStack justify='center' gap='14px' mb='40px'>
-          <Link
-            color='text.primary.contrast'
-            _hover={{ textDecoration: 'none' }}
-            bg='bg.primary'
-            borderRadius='11px'
-            href='https://github.com/Aspherioth'
-            p='14px 24px'
-            target='_blank'
-          >
-            GitHub
-          </Link>
-          <Link
-            color='text.primary'
-            _hover={{ textDecoration: 'none' }}
-            border='1px solid'
-            borderColor='border.primary'
-            borderRadius='11px'
-            href='https://www.linkedin.com/in/juan-macedo-69260a91/'
-            p='14px 24px'
-            target='_blank'
-          >
-            LinkedIn
-          </Link>
-        </HStack>
-
-        <Text
-          color='text.muted'
-          fontSize='lead'
-          lineHeight='1.6'
-          m='0px auto 40px'
-          maxW='50ch'
-        >
-          Not quite what you're looking for, but you'd still like to show some
-          support? ♥️
-        </Text>
-
-        <Link href='https://www.buymeacoffee.com/juanmpmaceh' target='_blank'>
-          <Image
-            src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
-            alt='Buy Me a Coffee'
-            h='40px'
-          />
+        Hiring for a frontend role? Email is the fastest way to reach me.
+      </Text>
+      <Link
+        href={`mailto:${EMAIL}`}
+        fontFamily='heading'
+        fontSize='callout'
+        lineHeight='1.1'
+        color='fg'
+        textDecoration='underline'
+        textDecorationColor='primary'
+        textDecorationThickness='2px'
+        textUnderlineOffset='10px'
+        overflowWrap='anywhere'
+        _hover={{ color: 'primary' }}
+      >
+        {EMAIL}
+      </Link>
+      <Flex
+        gap='28px'
+        wrap='wrap'
+        mt='40px'
+        fontSize='md'
+        fontWeight='semibold'
+      >
+        <Link href={LINKEDIN_URL} target='_blank' rel='noopener' {...linkStyle}>
+          LinkedIn ↗
         </Link>
-      </Card>
-    </Box>
+        <Link href={GITHUB_URL} target='_blank' rel='noopener' {...linkStyle}>
+          GitHub ↗
+        </Link>
+        <Link href={CV_URL} download {...linkStyle}>
+          Download CV
+        </Link>
+      </Flex>
+      <Text mt='32px' fontSize='body' color='fg.muted'>
+        Like the side projects?{' '}
+        <Link href={COFFEE_URL} target='_blank' rel='noopener' {...linkStyle}>
+          Buy me a coffee
+        </Link>
+        .
+      </Text>
+    </Section>
   )
 }
