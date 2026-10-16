@@ -35,7 +35,22 @@ const chakraTheme = defineConfig({
 })
 
 const customConfig = defineConfig({
+  globalCss: {
+    // Font smoothing already comes from Chakra's preflight
+    ':root': {
+      fontSynthesis: 'none',
+      textRendering: 'optimizeLegibility',
+      minWidth: '24rem',
+    },
+    html: { scrollBehavior: 'smooth' },
+  },
   theme: {
+    keyframes: {
+      fadeUp: {
+        from: { opacity: 0, transform: 'translateY(16px)' },
+        to: { opacity: 1, transform: 'none' },
+      },
+    },
     recipes: {
       button: buttonRecipe,
       container: containerRecipe,
