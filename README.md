@@ -1,8 +1,10 @@
 # Portfolio
 
-My personal portfolio: a single-page site with my professional work, a corner for side projects and small games, and a bit about me.
+My personal portfolio: a single-page site aimed at frontend hiring, with selected work, experience, skills, a corner for side projects and a bit about me.
 
 **Live site:** [aspherioth.github.io/portfolio](https://aspherioth.github.io/portfolio/)
+
+![The portfolio's hero and Selected work section](docs/screenshot.webp)
 
 ## Learning Focus
 
@@ -16,10 +18,12 @@ This project is designed to deepen understanding of modern web development throu
 
 ## Features
 
-- **Sections**: hero, selected work, side quests (small games and experiments), about and contact
+- **Sections**: hero, selected work (case-study cards), experience, toolbox, side projects, about and contact
+- **Downloadable CV**: served from `public/`
 - **Light and dark mode**: follows the system setting, with a toggle in the navigation
-- **Responsive design**: mobile-first layout with a collapsible menu on small screens
-- **Custom theme**: brand colours, fonts and semantic tokens defined in `src/theme.ts`
+- **Responsive design**: mobile-first layout; the nav keeps the key links on small screens and highlights the section you're reading
+- **Reduced motion**: entrance animations, carousel transitions and smooth scrolling switch off when the system asks for less motion
+- **Custom theme**: the "Ice & Chocolate" palette, fonts and semantic tokens defined in `src/theme.ts`
 - **Lean bundle**: only the Chakra UI recipes the site uses are registered
 
 ## Tech Stack
@@ -27,7 +31,7 @@ This project is designed to deepen understanding of modern web development throu
 - **Framework**: React 19 + TypeScript
 - **Build tool**: Vite 7
 - **Styling**: Chakra UI v3 (with Emotion), `next-themes` for colour mode
-- **Fonts**: Fontsource (Hanken Grotesk, Instrument Serif, JetBrains Mono)
+- **Fonts**: Fontsource (Newsreader, Schibsted Grotesk)
 - **Code quality**: ESLint 9 (flat config) + Prettier
 - **Deployment**: GitHub Pages via GitHub Actions
 
@@ -60,10 +64,12 @@ The dev server runs at `http://localhost:5173/portfolio/`. The `/portfolio/` pat
 
 ```
 src/
-├── assets/        Images
-├── components/    Page sections (Hero, About, Contact, ...)
-│   ├── cards/     Card components used in the work and games grids
-│   └── ui/        Chakra UI snippets (colour mode toggle)
+├── assets/        Images (portrait, side project screenshots)
+├── components/    Page sections (Hero, Experience, Toolbox, About, Contact, ...)
+│   ├── cards/     Work and side project cards, and their media carousel
+│   └── ui/        Chakra UI snippets (colour mode)
+├── data/          Site content: projects, experience, toolbox and links
+├── hooks/         useActiveSection for the nav highlight
 ├── pages/         Page layouts (Home)
 ├── theme.ts       Chakra UI system: tokens, semantic colours and recipes
 ├── App.tsx        Providers and top-level layout
