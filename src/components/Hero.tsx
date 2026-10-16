@@ -1,105 +1,82 @@
-import { Box, Heading, HStack, Link, Span, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react'
+
+import { CV_URL } from '@/data/content'
 
 import type { ReactNode } from 'react'
 
-export type HeroProps = {
-  id?: string
-}
+// Staggered entrance, skipped for people who prefer reduced motion
+const fadeUp = (delay: number) => ({
+  animation: `fadeUp 0.7s ease ${delay}s both`,
+  _motionReduce: { animation: 'none' },
+})
 
-export default function Hero({ id }: HeroProps): ReactNode {
+export default function Hero(): ReactNode {
   return (
     <Box
-      id={id}
       as='section'
-      p={{ base: '58px 0 54px', md: '96px 0 84px' }}
-      w='100%'
-      letterSpacing='-0.5px'
-      scrollMarginTop='90px'
+      pt={{ base: '56px', md: '92px' }}
+      pb={{ base: '50px', md: '80px' }}
     >
-      <Box
-        color='text.primary.brand'
-        fontSize='xs'
-        fontFamily='mono'
-        letterSpacing='3px'
-        mb='28px'
-        textTransform='uppercase'
-        animation='0.7s ease 0.05s 1 normal both running fadeUp'
-      >
-        Senior Software Engineer &nbsp;·&nbsp; Games in the making
-      </Box>
       <Heading
         as='h1'
         fontFamily='heading'
         fontSize='display'
-        lineHeight='1'
-        mb='34px'
+        fontWeight='normal'
+        lineHeight='1.02'
+        letterSpacing='-0.01em'
+        maxW='17ch'
+        textWrap='balance'
+        {...fadeUp(0.05)}
       >
-        <Span
-          display='block'
-          animation='0.7s ease 0.12s 1 normal both running fadeUp'
-        >
-          I build for the biggest
-        </Span>
-        <Span
-          display='block'
-          animation='0.7s ease 0.2s 1 normal both running fadeUp'
-        >
-          screen in the house.
-        </Span>
-        <Span
-          display='block'
-          animation='0.7s ease 0.28s 1 normal both running fadeUp'
-        >
-          Now,&nbsp;
-          <Span color='text.primary.brand' fontStyle='italic'>
-            worlds of my own.
-          </Span>
-        </Span>
+        Fast, accessible interfaces, from the phone to the biggest screen in the
+        house.
       </Heading>
       <Text
-        color='text.muted'
         maxW='56ch'
-        mb='40px'
-        fontFamily='note'
-        fontSize='lg'
-        lineHeight='1.65'
-        animation='0.7s ease 0.36s 1 normal both running fadeUp'
+        mt='32px'
+        fontSize='lead'
+        lineHeight='1.6'
+        color='fg.muted'
+        textWrap='pretty'
+        {...fadeUp(0.15)}
       >
-        A decade shipping interfaces for smart TVs and living-room devices:
-        fast, focused, and built to feel effortless from ten feet away. Off the
-        clock, I'm turning that craft into games of my own.
+        I'm Juan, a frontend engineer working in React and TypeScript. Since
+        2017 I've built web and smart TV interfaces for clients like Manchester
+        City, TV Asahi and San Francisco Opera.
       </Text>
-
-      <HStack
-        flexWrap='wrap'
-        gap='18px'
-        animation='0.7s ease 0.44s 1 normal both running fadeUp'
-      >
+      <Flex align='center' gap='14px' wrap='wrap' mt='38px' {...fadeUp(0.25)}>
         <Link
-          color='text.primary.contrast'
-          _hover={{ textDecoration: 'none' }}
-          bg='bg.primary'
-          borderRadius='11px'
-          p='14px 24px'
-          href='#work'
+          href={CV_URL}
+          download
+          bg='primary'
+          color='primary.contrast'
+          borderRadius='4px'
+          p='14px 22px'
+          fontSize='body'
+          fontWeight='semibold'
+          textDecoration='none'
+          _hover={{ bg: 'fg', color: 'bg', textDecoration: 'none' }}
         >
-          View selected work
+          Download CV
         </Link>
         <Link
-          color='text.primary'
-          _hover={{ textDecoration: 'none' }}
-          border='1px solid'
-          borderColor='border.primary'
-          borderRadius='11px'
           href='#contact'
-          p='14px 24px'
+          color='fg'
+          border='1px solid'
+          borderColor='fg'
+          borderRadius='4px'
+          p='13px 21px'
+          fontSize='body'
+          fontWeight='semibold'
+          textDecoration='none'
+          _hover={{ bg: 'fg', color: 'bg', textDecoration: 'none' }}
         >
           Get in touch
         </Link>
-        <Span color='text.muted' fontFamily='mono' fontSize='xs'>
-          Exploring the wonders of Ruby on Rails
-        </Span>
-      </HStack>
+      </Flex>
+      <Text mt='24px' fontSize='body' color='fg.muted' {...fadeUp(0.3)}>
+        Based in Madeira, Portugal. Open to remote frontend roles.
+      </Text>
     </Box>
   )
 }

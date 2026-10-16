@@ -2,9 +2,6 @@ import { createSystem, defaultBaseConfig, defineConfig } from '@chakra-ui/react'
 import {
   animationStyles,
   breakpoints,
-  buttonRecipe,
-  collapsibleSlotRecipe,
-  containerRecipe,
   cssVarsPrefix,
   cssVarsRoot,
   globalCss,
@@ -13,7 +10,6 @@ import {
   layerStyles,
   linkRecipe,
   semanticTokens,
-  skeletonRecipe,
   textStyles,
   tokens,
 } from '@chakra-ui/react/theme'
@@ -35,164 +31,77 @@ const chakraTheme = defineConfig({
 })
 
 const customConfig = defineConfig({
+  globalCss: {
+    // Font smoothing already comes from Chakra's preflight
+    ':root': {
+      fontSynthesis: 'none',
+      textRendering: 'optimizeLegibility',
+      minWidth: '20rem',
+    },
+    html: {
+      scrollBehavior: 'smooth',
+      _motionReduce: { scrollBehavior: 'auto' },
+    },
+    body: { fontFamily: 'body' },
+    'a:focus-visible, button:focus-visible': {
+      outline: '2px solid',
+      outlineColor: 'primary',
+      outlineOffset: '3px',
+    },
+  },
   theme: {
     recipes: {
-      button: buttonRecipe,
-      container: containerRecipe,
       heading: headingRecipe,
       link: linkRecipe,
-      skeleton: skeletonRecipe,
     },
-    slotRecipes: { collapsible: collapsibleSlotRecipe },
+    keyframes: {
+      fadeUp: {
+        from: { opacity: 0, transform: 'translateY(16px)' },
+        to: { opacity: 1, transform: 'none' },
+      },
+    },
     tokens: {
       fonts: {
-        card: {
-          header: {
-            value:
-              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
-          },
-        },
-        heading: { value: '"Instrument Serif", serif' },
+        heading: { value: "'Newsreader Variable', Georgia, serif" },
         body: {
-          value:
-            "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
-        },
-        mono: {
-          value: '"JetBrains Mono Variable", monospace',
-        },
-        note: {
-          value: "'Hanken Grotesk Variable', sans-serif",
+          value: "'Schibsted Grotesk Variable', system-ui, sans-serif",
         },
       },
       fontSizes: {
         // Role-based sizes that sit between Chakra's scale steps
-        label: { value: '0.6875rem' }, // 11px, mono uppercase labels
-        body: { value: '0.9375rem' }, // 15px, card and section copy
-        lead: { value: '1.0625rem' }, // 17px, contact paragraphs
-        logo: { value: '1.375rem' }, // 22px
-        cardTitle: { value: '1.625rem' }, // 26px
+        label: { value: '0.8125rem' }, // 13px, dates and tag lines
+        body: { value: '0.9375rem' }, // 15px, card and row copy
+        prose: { value: '1.03125rem' }, // 16.5px, About paragraphs
+        lead: { value: '1.1875rem' }, // 19px, hero paragraph and row titles
+        logo: { value: '1.5rem' }, // 24px
+        cardTitle: { value: '1.875rem' }, // 30px
         // Fluid headings: clamp(min, preferred, max)
-        intro: { value: 'clamp(1.625rem, 3vw, 2.375rem)' }, // 26-38px
-        sectionTitle: { value: 'clamp(1.875rem, 4vw, 2.875rem)' }, // 30-46px
-        callout: { value: 'clamp(2.25rem, 6vw, 4.5rem)' }, // 36-72px
-        display: { value: 'clamp(3rem, 7.5vw, 6.5rem)' }, // 48-104px
+        intro: { value: 'clamp(1.625rem, 2.8vw, 2.125rem)' }, // 26-34px
+        sectionTitle: { value: 'clamp(2rem, 4vw, 3rem)' }, // 32-48px
+        cover: { value: 'clamp(2.5rem, 4.4vw, 3.625rem)' }, // 40-58px
+        callout: { value: 'clamp(1.875rem, 5vw, 4rem)' }, // 30-64px
+        display: { value: 'clamp(2.875rem, 7vw, 6.25rem)' }, // 46-100px
       },
       colors: {
-        brand: {
-          primary: {
-            light: { value: '#5A60C4' },
-            dark: { value: '#9AA6F5' },
-            soft: { light: { value: '#E8EAFB' }, dark: { value: '#2A2F52' } },
-          },
-          secondary: {
-            light: { value: 'oklch(69.8% 0.137 50)' },
-            dark: { value: 'oklch(37.5% 0.12 50)' },
-          },
-          accent: { light: { value: '#2F9C86' }, dark: { value: '#84D8BE' } },
-          teal: {
-            light: { value: 'oklch(70.2% 0.123 180)' },
-            dark: { value: 'oklch(42.8% 0.086 180)' },
-          },
-          gold: {
-            light: { value: 'oklch(57.4% 0.12 85)' },
-            dark: { value: 'oklch(78.5% 0.125 85)' },
-          },
-          glass: {
-            light: { value: 'oklch(100 0 90 / 0.1)' },
-            dark: { value: 'oklch(100 0 90 / 0.1)' },
-          },
+        // "Ice & Chocolate" palette from design v5
+        ice: {
+          bg: { value: '#DCE5EA' },
+          surface: { value: '#E9EFF2' },
+          soft: { value: '#C8D5DC' },
+          border: { value: '#AFC0CA' },
         },
-        bg: {
-          light: { value: '#F4F6FB' },
-          dark: { value: '#161821' },
-          nav: {
-            light: {
-              value: 'color-mix(in srgb, {colors.bg.light} 78%, transparent)',
-            },
-            dark: {
-              value: 'color-mix(in srgb, {colors.bg.dark} 78%, transparent)',
-            },
-          },
+        chocolate: {
+          text: { value: '#2A1A12' },
+          muted: { value: '#584A42' },
+          bg: { value: '#1A120D' },
+          surface: { value: '#241913' },
+          soft: { value: '#2F221A' },
+          border: { value: '#423226' },
+          mutedLight: { value: '#AA9C92' },
         },
-        surface: {
-          light: { value: '#FFFFFF' },
-          dark: { value: '#1F222D' },
-        },
-        card: {
-          normal: {
-            light: { value: 'oklch(100% 0 0)' },
-            dark: { value: 'oklch(25.9% 0 0)' },
-          },
-          bold: {
-            light: { value: 'oklch(90% 0 0)' },
-            dark: { value: 'oklch(35.9% 0 0)' },
-          },
-        },
-        border: {
-          light: { value: '#E2E6F1' },
-          dark: { value: '#2F3343' },
-        },
-        text: {
-          primary: {
-            light: { value: '#2C3142' },
-            dark: { value: '#E7E9F2' },
-            contrast: {
-              light: { value: '#FFFFFF' },
-              dark: { value: '#161821' },
-            },
-          },
-          secondary: {
-            light: { value: 'oklch(24.2% 0.078 298)' },
-            dark: { value: 'oklch(94.1% 0 0)' },
-          },
-          muted: {
-            // light: { value: "oklch(42.8% 0.067 298)" },
-            light: { value: '#6B7287' },
-            // dark: { value: "oklch(80.8% 0 0)" },
-            dark: { value: '#9AA0B6' },
-          },
-        },
-        feedback: {
-          success: {
-            light: { value: 'oklch(94.8% 0.043 142)' },
-            dark: { value: 'oklch(52.8% 0.12 142)' },
-          },
-          warning: {
-            light: { value: 'oklch(96.5% 0.056 85)' },
-            dark: { value: 'oklch(61.2% 0.118 85)' },
-          },
-          error: {
-            light: { value: 'oklch(89.2% 0.075 15)' },
-            dark: { value: 'oklch(42.5% 0.18 15)' },
-          },
-          info: {
-            light: { value: 'oklch(92.8% 0.065 230)' },
-            dark: { value: 'oklch(54.8% 0.145 230)' },
-          },
-        },
-      },
-      shadows: {
-        // section: {
-        //   light: { value: '0 10px 35px rgba(0, 0, 0, 0.07)' },
-        //   dark: { value: '0 12px 35px rgba(0, 0, 0, 0.35)' },
-        // },
-        section: {
-          light: { value: '0 10px 35px rgba(0, 0, 0, 0.07)' },
-          dark: { value: '0 10px 35px rgba(0, 0, 0, 0.35)' },
-        },
-        card: {
-          light: { value: '0 8px 20px rgba(0, 0, 0, 0.07)' },
-          dark: { value: '0 10px 25px rgba(0, 0, 0, 0.35)' },
-        },
-        glow: {
-          primary: {
-            light: { value: '0 0 10px oklch(35.6% 0.165 298 / 0.35)' },
-            dark: { value: '0 0 16px oklch(38.2% 0.162 298 / 0.55)' },
-          },
-          secondary: {
-            light: { value: '0 0 10px oklch(69.8% 0.137 50 / 0.35)' },
-            dark: { value: '0 0 16px oklch(37.5% 0.12 50 / 0.55)' },
-          },
+        olive: {
+          dark: { value: '#4A6A0F' },
+          light: { value: '#B9D66E' },
         },
       },
     },
@@ -201,123 +110,54 @@ const customConfig = defineConfig({
         bg: {
           DEFAULT: {
             value: {
-              // _light: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              _light: '{colors.bg.light}',
-              // _dark: "linear-gradient(135deg, #0f172a 0%, #312e81 100%)",
-              _dark: '{colors.bg.dark}',
-            },
-          },
-          primary: {
-            DEFAULT: {
-              value: {
-                base: '{colors.brand.primary.light}',
-                _dark: '{colors.brand.primary.dark}',
-              },
-            },
-            soft: {
-              value: {
-                base: '{colors.brand.primary.soft.light}',
-                _dark: '{colors.brand.primary.soft.dark}',
-              },
+              _light: '{colors.ice.bg}',
+              _dark: '{colors.chocolate.bg}',
             },
           },
           surface: {
             value: {
-              base: '{colors.surface.light}',
-              _dark: '{colors.surface.dark}',
+              _light: '{colors.ice.surface}',
+              _dark: '{colors.chocolate.surface}',
             },
           },
-          nav: {
+          soft: {
             value: {
-              // base: "{colors.brand.glass.light}",
-              base: '{colors.bg.nav.light}',
-              // _dark: "{colors.brand.glass.dark}",
-              _dark: '{colors.bg.nav.dark}',
+              _light: '{colors.ice.soft}',
+              _dark: '{colors.chocolate.soft}',
             },
           },
         },
-        card: {
+        fg: {
           DEFAULT: {
             value: {
-              base: '{colors.card.normal.light}',
-              _dark: '{colors.card.normal.dark}',
-            },
-          },
-          bold: {
-            value: {
-              base: '{colors.card.bold.light}',
-              _dark: '{colors.card.bold.dark}',
-            },
-          },
-        },
-        border: {
-          primary: {
-            value: {
-              base: '{colors.border.light}',
-              _dark: '{colors.border.dark}',
-            },
-          },
-          teal: {
-            value: {
-              base: '{colors.brand.teal.light}',
-              _dark: '{colors.brand.teal.dark}',
-            },
-          },
-        },
-        text: {
-          primary: {
-            DEFAULT: {
-              value: {
-                base: '{colors.text.primary.light}',
-                _dark: '{colors.text.primary.dark}',
-              },
-            },
-            brand: {
-              value: {
-                base: '{colors.brand.primary.light}',
-                _dark: '{colors.brand.primary.dark}',
-              },
-            },
-            contrast: {
-              value: {
-                base: '{colors.text.primary.contrast.light}',
-                _dark: '{colors.text.primary.contrast.dark}',
-              },
-            },
-          },
-          secondary: {
-            DEFAULT: {
-              value: {
-                base: '{colors.text.secondary.light}',
-                _dark: '{colors.text.secondary.dark}',
-              },
-            },
-            brand: {
-              value: {
-                base: '{colors.brand.secondary.light}',
-                _dark: '{colors.brand.secondary.dark}',
-              },
-            },
-          },
-          accent: {
-            value: {
-              base: '{colors.brand.accent.light}',
-              _dark: '{colors.brand.accent.dark}',
+              _light: '{colors.chocolate.text}',
+              _dark: '{colors.ice.bg}',
             },
           },
           muted: {
             value: {
-              base: '{colors.text.muted.light}',
-              _dark: '{colors.text.muted.dark}',
+              _light: '{colors.chocolate.muted}',
+              _dark: '{colors.chocolate.mutedLight}',
             },
           },
         },
-      },
-      shadows: {
-        section: {
-          value: {
-            base: '{shadows.section.light}',
-            _dark: '{shadows.section.dark}',
+        border: {
+          DEFAULT: {
+            value: {
+              _light: '{colors.ice.border}',
+              _dark: '{colors.chocolate.border}',
+            },
+          },
+        },
+        primary: {
+          DEFAULT: {
+            value: {
+              _light: '{colors.olive.dark}',
+              _dark: '{colors.olive.light}',
+            },
+          },
+          contrast: {
+            value: { _light: '#FFFFFF', _dark: '{colors.chocolate.bg}' },
           },
         },
       },

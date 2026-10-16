@@ -1,11 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import './index.css'
-import '@fontsource/instrument-serif'
-import '@fontsource/instrument-serif/latin-italic'
-import '@fontsource-variable/hanken-grotesk'
-import '@fontsource-variable/jetbrains-mono/wght.css'
+import '@fontsource-variable/newsreader/opsz.css'
+import '@fontsource-variable/schibsted-grotesk'
 
 import App from '@/App'
 

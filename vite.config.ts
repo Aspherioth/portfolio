@@ -9,5 +9,5 @@ export default defineConfig(({ mode }) => ({
     tsconfigPaths(),
     mode === 'analyze' && (visualizer({ open: true }) as PluginOption),
   ],
-  base: '/portfolio',
+  base: '/portfolio/',
 }))
