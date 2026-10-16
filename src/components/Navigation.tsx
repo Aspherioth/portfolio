@@ -1,6 +1,7 @@
 import { Box, chakra, Flex, HStack, Link } from '@chakra-ui/react'
 
 import { useColorMode } from '@/components/ui/color-mode'
+import useActiveSection from '@/hooks/useActiveSection'
 
 import type { ReactNode } from 'react'
 
@@ -19,7 +20,18 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'contact', label: 'Contact' },
 ]
 
+// About has no nav link but still counts, so Side projects isn't left lit
+const TRACKED_SECTIONS = [
+  'work',
+  'experience',
+  'skills',
+  'side-projects',
+  'about',
+  'contact',
+]
+
 export default function Navigation(): ReactNode {
+  const active = useActiveSection(TRACKED_SECTIONS)
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
@@ -59,20 +71,26 @@ export default function Navigation(): ReactNode {
           aria-label='Sections'
           gap={{ base: '14px', md: '24px' }}
         >
-          {NAV_ITEMS.map(({ id, label, hideOnMobile }) => (
-            <Link
-              key={id}
-              href={`#${id}`}
-              hideBelow={hideOnMobile ? 'lg' : undefined}
-              fontSize='body'
-              fontWeight='medium'
-              color='fg'
-              textDecoration='none'
-              _hover={{ color: 'primary' }}
-            >
-              {label}
-            </Link>
-          ))}
+          {NAV_ITEMS.map(({ id, label, hideOnMobile }) => {
+            const isActive = active === id
+            return (
+              <Link
+                key={id}
+                href={`#${id}`}
+                aria-current={isActive ? 'location' : undefined}
+                hideBelow={hideOnMobile ? 'lg' : undefined}
+                fontSize='body'
+                fontWeight='medium'
+                color={isActive ? 'primary' : 'fg'}
+                textDecoration={isActive ? 'underline' : 'none'}
+                textDecorationThickness='2px'
+                textUnderlineOffset='6px'
+                _hover={{ color: 'primary' }}
+              >
+                {label}
+              </Link>
+            )
+          })}
           <chakra.button
             type='button'
             onClick={toggleColorMode}
